@@ -18,14 +18,36 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include <stdio.h>
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
-/* USER CODE END Includes */
+/* define for the linear */
+/* These values can be modified, board layout dependency */
+#define TSCx_MIN_THRESHOLD       1000
+#define TSCx_LOW_MAXTHRESHOLD    1290
+#define TSCx_MEDIUM_MAXTHRESHOLD 1270
+#define TSCx_HIGH_MAXTHRESHOLD   1245/* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN PTD */
+
+void sendChar(char c) {
+	while (!(USART3->ISR & USART_ISR_TXE)) { }
+	
+	USART3->TDR = c;
+}
+
+void sendString(char *s) {
+	while (s[0] != 0) {
+		sendChar(s[0]);
+		s++;
+	}
+}
+
+
+char buf[128];
+
 
 /* USER CODE END PTD */
 
@@ -43,7 +65,11 @@ I2C_HandleTypeDef hi2c2;
 
 TSC_HandleTypeDef htsc;
 
+/* Array used to store the acquisition value */
+__IO uint32_t uhTSCAcquisitionValue;
+
 PCD_HandleTypeDef hpcd_USB_FS;
+
 
 /* USER CODE BEGIN PV */
 
@@ -95,14 +121,95 @@ int main(void)
   MX_I2C2_Init();
   MX_TSC_Init();
   MX_USB_PCD_Init();
+	
   /* USER CODE BEGIN 2 */
+// hacky USART INIT
+	RCC->APB1ENR |= RCC_APB1ENR_USART3EN;
+  //GPIOC->MODER |= ((1<<11)|(1<<9)); // PC4 and PC5
+	GPIOC->MODER |= ((1<<21)|(1<<23)); // PC10 and PC11
+	//GPIOC->AFR[0] |= (1<<20); // PC5
+	//GPIOC->AFR[0] |= (1<<16); // PC4
+	GPIOC->AFR[1] |= 1<<8; // PC10
+	GPIOC->AFR[1] |= 1<<12; // PC11
+	
+	USART3->BRR = HAL_RCC_GetHCLKFreq() / 115200;
+	USART3->CR1 = USART_CR1_TE | USART_CR1_UE; /* (2) */
 
+	sprintf(buf, "Init...\r\n");
+	sendString(buf);
   /* USER CODE END 2 */
-
+	
   /* Infinite loop */
   while (1)
-  {
-		//HAL_TSC_IODischarge();
+  {    
+	
+		/*##-2- Discharge the touch-sensing IOs ##################################*/
+    /* Must be done before each acquisition */
+    HAL_TSC_IODischarge(&htsc, ENABLE);
+    HAL_Delay(1); /* 1 ms is more than enough to discharge all capacitors */
+		
+    /*##-3- Start the acquisition process ####################################*/
+    if (HAL_TSC_Start(&htsc) != HAL_OK)
+    {
+      /* Acquisition Error */
+      Error_Handler();
+    }
+		
+    /*##-4- Wait for the end of acquisition ##################################*/
+    /*  Before starting a new acquisition, you need to check the current state of
+         the peripheral; if it’s busy you need to wait for the end of current
+         acquisition before starting a new one. */
+    while (HAL_TSC_GetState(&htsc) == HAL_TSC_STATE_BUSY)
+    {
+      /* For simplicity reasons, this example is just waiting till the end of the
+         acquisition, but application may perform other tasks while acquisition
+         operation is ongoing. */
+    }
+		
+    /*##-5- Clear flags ######################################################*/
+    __HAL_TSC_CLEAR_FLAG(&htsc, (TSC_FLAG_EOA | TSC_FLAG_MCE));
+    
+		
+    /*##-6- Check if the acquisition is correct (no max count) ###############*/
+    if (HAL_TSC_GroupGetStatus(&htsc, TSC_GROUP1_IDX) == TSC_GROUP_COMPLETED)
+    {
+      /*##-7- Store the acquisition value ####################################*/
+      uhTSCAcquisitionValue = HAL_TSC_GroupGetValue(&htsc, TSC_GROUP1_IDX);
+
+			sprintf(buf, "%d\r\n", uhTSCAcquisitionValue);
+			sendString(buf);
+			
+      /* Show touch activity on LEDs */
+      /* Threshold values are indicative and may need to be adjusted */
+      if ((uhTSCAcquisitionValue > TSCx_MIN_THRESHOLD) && (uhTSCAcquisitionValue < TSCx_LOW_MAXTHRESHOLD))
+      {
+        BSP_LED_On(LED4);
+        if (uhTSCAcquisitionValue < TSCx_MEDIUM_MAXTHRESHOLD)
+        {
+          BSP_LED_On(LED6);
+          if (uhTSCAcquisitionValue < TSCx_HIGH_MAXTHRESHOLD)
+          {
+            BSP_LED_On(LED5);
+          }
+          else
+          {
+            BSP_LED_Off(LED5);
+          }
+        }
+        else
+        {
+          BSP_LED_Off(LED6);
+          BSP_LED_Off(LED5);
+        }
+      }
+      else
+      {
+        BSP_LED_Off(LED4);
+        BSP_LED_Off(LED6);
+        BSP_LED_Off(LED5);
+      }
+    }
+		
   }
 }
 
@@ -215,21 +322,21 @@ static void MX_TSC_Init(void)
   /* USER CODE END TSC_Init 1 */
   /** Configure the TSC peripheral
   */
-  htsc.Instance = TSC;
-  htsc.Init.CTPulseHighLength = TSC_CTPH_2CYCLES;
-  htsc.Init.CTPulseLowLength = TSC_CTPL_2CYCLES;
-  htsc.Init.SpreadSpectrum = DISABLE;
-  htsc.Init.SpreadSpectrumDeviation = 1;
+  htsc.Instance                     = TSCx;
+  htsc.Init.AcquisitionMode         = TSC_ACQ_MODE_NORMAL;
+  htsc.Init.CTPulseHighLength       = TSC_CTPH_1CYCLE;
+  htsc.Init.CTPulseLowLength        = TSC_CTPL_1CYCLE;
+  htsc.Init.IODefaultMode           = TSC_IODEF_IN_FLOAT; /* Because the electrodes are interlaced on this board */
+  htsc.Init.MaxCountInterrupt       = DISABLE;
+  htsc.Init.MaxCountValue           = TSC_MCV_16383;
+  htsc.Init.PulseGeneratorPrescaler = TSC_PG_PRESC_DIV64;
+  htsc.Init.SpreadSpectrum          = DISABLE;
+  htsc.Init.SpreadSpectrumDeviation = 127;
   htsc.Init.SpreadSpectrumPrescaler = TSC_SS_PRESC_DIV1;
-  htsc.Init.PulseGeneratorPrescaler = TSC_PG_PRESC_DIV4;
-  htsc.Init.MaxCountValue = TSC_MCV_8191;
-  htsc.Init.IODefaultMode = TSC_IODEF_OUT_PP_LOW;
-  htsc.Init.SynchroPinPolarity = TSC_SYNC_POLARITY_FALLING;
-  htsc.Init.AcquisitionMode = TSC_ACQ_MODE_NORMAL;
-  htsc.Init.MaxCountInterrupt = DISABLE;
-  htsc.Init.ChannelIOs = TSC_GROUP1_IO3|TSC_GROUP2_IO3|TSC_GROUP3_IO2;
-  htsc.Init.ShieldIOs = 0;
-  htsc.Init.SamplingIOs = TSC_GROUP1_IO4|TSC_GROUP2_IO4|TSC_GROUP3_IO3;
+  htsc.Init.SynchroPinPolarity      = TSC_SYNC_POLARITY_FALLING;
+  htsc.Init.ChannelIOs              = TSC_GROUP1_IO3; /* TS1 touchkey */
+  htsc.Init.SamplingIOs             = (TSC_GROUP1_IO4 | TSC_GROUP2_IO4 | TSC_GROUP3_IO3);
+  htsc.Init.ShieldIOs               = 0;
   if (HAL_TSC_Init(&htsc) != HAL_OK)
   {
     Error_Handler();

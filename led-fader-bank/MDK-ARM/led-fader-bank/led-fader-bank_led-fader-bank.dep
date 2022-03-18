@@ -1,8 +1,8 @@
 Dependencies for Project 'led-fader-bank', Target 'led-fader-bank': (DO NOT MODIFY !)
 CompilerVersion: 5060960::V5.06 update 7 (build 960)::.\ARMCC
 F (startup_stm32f072xb.s)(0x6234AE55)(--cpu Cortex-M0 --pd "__EVAL SETA 1" -g --apcs=interwork -I.\RTE\_led-fader-bank-IC:\Users\Owner\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\Owner\AppData\Local\Arm\Packs\Keil\STM32F0xx_DFP\2.1.0\Drivers\CMSIS\Device\ST\STM32F0xx\Include--pd "__UVISION_VERSION SETA 536" --pd "_RTE_ SETA 1" --pd "STM32F072xB SETA 1" --pd "_RTE_ SETA 1"--list startup_stm32f072xb.lst --xref -o led-fader-bank\startup_stm32f072xb.o --depend led-fader-bank\startup_stm32f072xb.d)
-F (../Core/Src/main.c)(0x6234B2D2)(--c99 -c --cpu Cortex-M0 -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_led-fader-bank-IC:\Users\Owner\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\Owner\AppData\Local\Arm\Packs\Keil\STM32F0xx_DFP\2.1.0\Drivers\CMSIS\Device\ST\STM32F0xx\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F072xB -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F072xB-o led-fader-bank\main.o --omf_browse led-fader-bank\main.crf --depend led-fader-bank\main.d)
-I (../Core/Inc/main.h)(0x6234AE4F)
+F (../Core/Src/main.c)(0x6234D537)(--c99 -c --cpu Cortex-M0 -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_led-fader-bank-IC:\Users\Owner\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\Owner\AppData\Local\Arm\Packs\Keil\STM32F0xx_DFP\2.1.0\Drivers\CMSIS\Device\ST\STM32F0xx\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F072xB -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F072xB-o led-fader-bank\main.o --omf_browse led-fader-bank\main.crf --depend led-fader-bank\main.d)
+I (../Core/Inc/main.h)(0x6234D4B9)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h)(0x61EF1A0C)
 I (../Core/Inc/stm32f0xx_hal_conf.h)(0x6234AE4E)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc.h)(0x61EF1A0C)
@@ -10,7 +10,7 @@ I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_def.h)(0x61EF1A0C)
 I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f0xx.h)(0x61EF1A0C)
 I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f072xb.h)(0x61EF1A0C)
 I (../Drivers/CMSIS/Include/core_cm0.h)(0x61EF19F2)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6025F66E)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6234D446)
 I (../Drivers/CMSIS/Include/cmsis_version.h)(0x61EF19F2)
 I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x61EF19F2)
 I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x61EF19F2)
@@ -34,8 +34,10 @@ I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pcd_ex.h)(0x61EF1A0C)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pwr.h)(0x61EF1A0C)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pwr_ex.h)(0x61EF1A0C)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_tsc.h)(0x61EF1A0C)
+I (../Drivers/STM32F0xx_HAL_Driver/Inc/..\..\..\Core\Src\stm32f072b_discovery.h)(0x6234C69F)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x6025F664)
 F (../Core/Src/stm32f0xx_it.c)(0x6234AE4E)(--c99 -c --cpu Cortex-M0 -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_led-fader-bank-IC:\Users\Owner\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\Owner\AppData\Local\Arm\Packs\Keil\STM32F0xx_DFP\2.1.0\Drivers\CMSIS\Device\ST\STM32F0xx\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F072xB -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F072xB-o led-fader-bank\stm32f0xx_it.o --omf_browse led-fader-bank\stm32f0xx_it.crf --depend led-fader-bank\stm32f0xx_it.d)
-I (../Core/Inc/main.h)(0x6234AE4F)
+I (../Core/Inc/main.h)(0x6234D4B9)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h)(0x61EF1A0C)
 I (../Core/Inc/stm32f0xx_hal_conf.h)(0x6234AE4E)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc.h)(0x61EF1A0C)
@@ -43,7 +45,7 @@ I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_def.h)(0x61EF1A0C)
 I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f0xx.h)(0x61EF1A0C)
 I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f072xb.h)(0x61EF1A0C)
 I (../Drivers/CMSIS/Include/core_cm0.h)(0x61EF19F2)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6025F66E)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6234D446)
 I (../Drivers/CMSIS/Include/cmsis_version.h)(0x61EF19F2)
 I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x61EF19F2)
 I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x61EF19F2)
@@ -67,9 +69,10 @@ I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pcd_ex.h)(0x61EF1A0C)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pwr.h)(0x61EF1A0C)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pwr_ex.h)(0x61EF1A0C)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_tsc.h)(0x61EF1A0C)
+I (../Drivers/STM32F0xx_HAL_Driver/Inc/..\..\..\Core\Src\stm32f072b_discovery.h)(0x6234C69F)
 I (../Core/Inc/stm32f0xx_it.h)(0x6234AE4E)
 F (../Core/Src/stm32f0xx_hal_msp.c)(0x6234AE4E)(--c99 -c --cpu Cortex-M0 -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_led-fader-bank-IC:\Users\Owner\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\Owner\AppData\Local\Arm\Packs\Keil\STM32F0xx_DFP\2.1.0\Drivers\CMSIS\Device\ST\STM32F0xx\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F072xB -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F072xB-o led-fader-bank\stm32f0xx_hal_msp.o --omf_browse led-fader-bank\stm32f0xx_hal_msp.crf --depend led-fader-bank\stm32f0xx_hal_msp.d)
-I (../Core/Inc/main.h)(0x6234AE4F)
+I (../Core/Inc/main.h)(0x6234D4B9)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h)(0x61EF1A0C)
 I (../Core/Inc/stm32f0xx_hal_conf.h)(0x6234AE4E)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc.h)(0x61EF1A0C)
@@ -77,7 +80,7 @@ I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_def.h)(0x61EF1A0C)
 I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f0xx.h)(0x61EF1A0C)
 I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f072xb.h)(0x61EF1A0C)
 I (../Drivers/CMSIS/Include/core_cm0.h)(0x61EF19F2)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6025F66E)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6234D446)
 I (../Drivers/CMSIS/Include/cmsis_version.h)(0x61EF19F2)
 I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x61EF19F2)
 I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x61EF19F2)
@@ -101,6 +104,41 @@ I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pcd_ex.h)(0x61EF1A0C)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pwr.h)(0x61EF1A0C)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pwr_ex.h)(0x61EF1A0C)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_tsc.h)(0x61EF1A0C)
+I (../Drivers/STM32F0xx_HAL_Driver/Inc/..\..\..\Core\Src\stm32f072b_discovery.h)(0x6234C69F)
+F (..\Core\Src\stm32f072b_discovery.c)(0x6234C681)(--c99 -c --cpu Cortex-M0 -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_led-fader-bank-IC:\Users\Owner\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\Owner\AppData\Local\Arm\Packs\Keil\STM32F0xx_DFP\2.1.0\Drivers\CMSIS\Device\ST\STM32F0xx\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F072xB -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F072xB-o led-fader-bank\stm32f072b_discovery.o --omf_browse led-fader-bank\stm32f072b_discovery.crf --depend led-fader-bank\stm32f072b_discovery.d)
+I (..\Core\Src\stm32f072b_discovery.h)(0x6234C69F)
+I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h)(0x61EF1A0C)
+I (../Core/Inc/stm32f0xx_hal_conf.h)(0x6234AE4E)
+I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc.h)(0x61EF1A0C)
+I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_def.h)(0x61EF1A0C)
+I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f0xx.h)(0x61EF1A0C)
+I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f072xb.h)(0x61EF1A0C)
+I (../Drivers/CMSIS/Include/core_cm0.h)(0x61EF19F2)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6234D446)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x61EF19F2)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x61EF19F2)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x61EF19F2)
+I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/system_stm32f0xx.h)(0x61EF1A0C)
+I (../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x61EF1A0C)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x6025F66E)
+I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc_ex.h)(0x61EF1A0C)
+I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_gpio.h)(0x61EF1A0C)
+I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_gpio_ex.h)(0x61EF1A0C)
+I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_exti.h)(0x61EF1A0C)
+I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_dma.h)(0x61EF1A0C)
+I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_dma_ex.h)(0x61EF1A0C)
+I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_cortex.h)(0x61EF1A0C)
+I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_flash.h)(0x61EF1A0C)
+I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_flash_ex.h)(0x61EF1A0C)
+I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_i2c.h)(0x61EF1A0C)
+I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_i2c_ex.h)(0x61EF1A0C)
+I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pcd.h)(0x61EF1A0C)
+I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_usb.h)(0x61EF1A0C)
+I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pcd_ex.h)(0x61EF1A0C)
+I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pwr.h)(0x61EF1A0C)
+I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pwr_ex.h)(0x61EF1A0C)
+I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_tsc.h)(0x61EF1A0C)
+F (..\Core\Src\stm32f072b_discovery.h)(0x6234C69F)()
 F (../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_ll_usb.c)(0x61EF1A0C)(--c99 -c --cpu Cortex-M0 -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_led-fader-bank-IC:\Users\Owner\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\Owner\AppData\Local\Arm\Packs\Keil\STM32F0xx_DFP\2.1.0\Drivers\CMSIS\Device\ST\STM32F0xx\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F072xB -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F072xB-o led-fader-bank\stm32f0xx_ll_usb.o --omf_browse led-fader-bank\stm32f0xx_ll_usb.crf --depend led-fader-bank\stm32f0xx_ll_usb.d)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h)(0x61EF1A0C)
 I (../Core/Inc/stm32f0xx_hal_conf.h)(0x6234AE4E)
@@ -109,7 +147,7 @@ I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_def.h)(0x61EF1A0C)
 I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f0xx.h)(0x61EF1A0C)
 I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f072xb.h)(0x61EF1A0C)
 I (../Drivers/CMSIS/Include/core_cm0.h)(0x61EF19F2)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6025F66E)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6234D446)
 I (../Drivers/CMSIS/Include/cmsis_version.h)(0x61EF19F2)
 I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x61EF19F2)
 I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x61EF19F2)
@@ -141,7 +179,7 @@ I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_def.h)(0x61EF1A0C)
 I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f0xx.h)(0x61EF1A0C)
 I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f072xb.h)(0x61EF1A0C)
 I (../Drivers/CMSIS/Include/core_cm0.h)(0x61EF19F2)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6025F66E)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6234D446)
 I (../Drivers/CMSIS/Include/cmsis_version.h)(0x61EF19F2)
 I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x61EF19F2)
 I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x61EF19F2)
@@ -173,7 +211,7 @@ I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_def.h)(0x61EF1A0C)
 I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f0xx.h)(0x61EF1A0C)
 I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f072xb.h)(0x61EF1A0C)
 I (../Drivers/CMSIS/Include/core_cm0.h)(0x61EF19F2)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6025F66E)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6234D446)
 I (../Drivers/CMSIS/Include/cmsis_version.h)(0x61EF19F2)
 I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x61EF19F2)
 I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x61EF19F2)
@@ -205,7 +243,7 @@ I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_def.h)(0x61EF1A0C)
 I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f0xx.h)(0x61EF1A0C)
 I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f072xb.h)(0x61EF1A0C)
 I (../Drivers/CMSIS/Include/core_cm0.h)(0x61EF19F2)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6025F66E)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6234D446)
 I (../Drivers/CMSIS/Include/cmsis_version.h)(0x61EF19F2)
 I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x61EF19F2)
 I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x61EF19F2)
@@ -237,7 +275,7 @@ I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_def.h)(0x61EF1A0C)
 I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f0xx.h)(0x61EF1A0C)
 I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f072xb.h)(0x61EF1A0C)
 I (../Drivers/CMSIS/Include/core_cm0.h)(0x61EF19F2)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6025F66E)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6234D446)
 I (../Drivers/CMSIS/Include/cmsis_version.h)(0x61EF19F2)
 I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x61EF19F2)
 I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x61EF19F2)
@@ -269,7 +307,7 @@ I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_def.h)(0x61EF1A0C)
 I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f0xx.h)(0x61EF1A0C)
 I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f072xb.h)(0x61EF1A0C)
 I (../Drivers/CMSIS/Include/core_cm0.h)(0x61EF19F2)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6025F66E)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6234D446)
 I (../Drivers/CMSIS/Include/cmsis_version.h)(0x61EF19F2)
 I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x61EF19F2)
 I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x61EF19F2)
@@ -301,7 +339,7 @@ I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_def.h)(0x61EF1A0C)
 I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f0xx.h)(0x61EF1A0C)
 I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f072xb.h)(0x61EF1A0C)
 I (../Drivers/CMSIS/Include/core_cm0.h)(0x61EF19F2)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6025F66E)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6234D446)
 I (../Drivers/CMSIS/Include/cmsis_version.h)(0x61EF19F2)
 I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x61EF19F2)
 I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x61EF19F2)
@@ -333,7 +371,7 @@ I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_def.h)(0x61EF1A0C)
 I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f0xx.h)(0x61EF1A0C)
 I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f072xb.h)(0x61EF1A0C)
 I (../Drivers/CMSIS/Include/core_cm0.h)(0x61EF19F2)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6025F66E)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6234D446)
 I (../Drivers/CMSIS/Include/cmsis_version.h)(0x61EF19F2)
 I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x61EF19F2)
 I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x61EF19F2)
@@ -365,7 +403,7 @@ I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_def.h)(0x61EF1A0C)
 I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f0xx.h)(0x61EF1A0C)
 I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f072xb.h)(0x61EF1A0C)
 I (../Drivers/CMSIS/Include/core_cm0.h)(0x61EF19F2)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6025F66E)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6234D446)
 I (../Drivers/CMSIS/Include/cmsis_version.h)(0x61EF19F2)
 I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x61EF19F2)
 I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x61EF19F2)
@@ -397,7 +435,7 @@ I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_def.h)(0x61EF1A0C)
 I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f0xx.h)(0x61EF1A0C)
 I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f072xb.h)(0x61EF1A0C)
 I (../Drivers/CMSIS/Include/core_cm0.h)(0x61EF19F2)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6025F66E)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6234D446)
 I (../Drivers/CMSIS/Include/cmsis_version.h)(0x61EF19F2)
 I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x61EF19F2)
 I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x61EF19F2)
@@ -429,7 +467,7 @@ I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_def.h)(0x61EF1A0C)
 I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f0xx.h)(0x61EF1A0C)
 I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f072xb.h)(0x61EF1A0C)
 I (../Drivers/CMSIS/Include/core_cm0.h)(0x61EF19F2)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6025F66E)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6234D446)
 I (../Drivers/CMSIS/Include/cmsis_version.h)(0x61EF19F2)
 I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x61EF19F2)
 I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x61EF19F2)
@@ -461,7 +499,7 @@ I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_def.h)(0x61EF1A0C)
 I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f0xx.h)(0x61EF1A0C)
 I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f072xb.h)(0x61EF1A0C)
 I (../Drivers/CMSIS/Include/core_cm0.h)(0x61EF19F2)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6025F66E)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6234D446)
 I (../Drivers/CMSIS/Include/cmsis_version.h)(0x61EF19F2)
 I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x61EF19F2)
 I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x61EF19F2)
@@ -493,7 +531,7 @@ I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_def.h)(0x61EF1A0C)
 I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f0xx.h)(0x61EF1A0C)
 I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f072xb.h)(0x61EF1A0C)
 I (../Drivers/CMSIS/Include/core_cm0.h)(0x61EF19F2)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6025F66E)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6234D446)
 I (../Drivers/CMSIS/Include/cmsis_version.h)(0x61EF19F2)
 I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x61EF19F2)
 I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x61EF19F2)
@@ -525,7 +563,7 @@ I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_def.h)(0x61EF1A0C)
 I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f0xx.h)(0x61EF1A0C)
 I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f072xb.h)(0x61EF1A0C)
 I (../Drivers/CMSIS/Include/core_cm0.h)(0x61EF19F2)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6025F66E)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6234D446)
 I (../Drivers/CMSIS/Include/cmsis_version.h)(0x61EF19F2)
 I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x61EF19F2)
 I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x61EF19F2)
@@ -557,7 +595,7 @@ I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_def.h)(0x61EF1A0C)
 I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f0xx.h)(0x61EF1A0C)
 I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f072xb.h)(0x61EF1A0C)
 I (../Drivers/CMSIS/Include/core_cm0.h)(0x61EF19F2)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6025F66E)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6234D446)
 I (../Drivers/CMSIS/Include/cmsis_version.h)(0x61EF19F2)
 I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x61EF19F2)
 I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x61EF19F2)
@@ -589,7 +627,7 @@ I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_def.h)(0x61EF1A0C)
 I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f0xx.h)(0x61EF1A0C)
 I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f072xb.h)(0x61EF1A0C)
 I (../Drivers/CMSIS/Include/core_cm0.h)(0x61EF19F2)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6025F66E)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6234D446)
 I (../Drivers/CMSIS/Include/cmsis_version.h)(0x61EF19F2)
 I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x61EF19F2)
 I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x61EF19F2)
@@ -621,7 +659,7 @@ I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_def.h)(0x61EF1A0C)
 I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f0xx.h)(0x61EF1A0C)
 I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f072xb.h)(0x61EF1A0C)
 I (../Drivers/CMSIS/Include/core_cm0.h)(0x61EF19F2)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6025F66E)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6234D446)
 I (../Drivers/CMSIS/Include/cmsis_version.h)(0x61EF19F2)
 I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x61EF19F2)
 I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x61EF19F2)
@@ -653,7 +691,7 @@ I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_def.h)(0x61EF1A0C)
 I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f0xx.h)(0x61EF1A0C)
 I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f072xb.h)(0x61EF1A0C)
 I (../Drivers/CMSIS/Include/core_cm0.h)(0x61EF19F2)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6025F66E)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6234D446)
 I (../Drivers/CMSIS/Include/cmsis_version.h)(0x61EF19F2)
 I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x61EF19F2)
 I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x61EF19F2)
@@ -685,7 +723,7 @@ I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_def.h)(0x61EF1A0C)
 I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f0xx.h)(0x61EF1A0C)
 I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f072xb.h)(0x61EF1A0C)
 I (../Drivers/CMSIS/Include/core_cm0.h)(0x61EF19F2)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6025F66E)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6234D446)
 I (../Drivers/CMSIS/Include/cmsis_version.h)(0x61EF19F2)
 I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x61EF19F2)
 I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x61EF19F2)
@@ -713,7 +751,7 @@ F (../Core/Src/system_stm32f0xx.c)(0x61EF1A0C)(--c99 -c --cpu Cortex-M0 -D__EVAL
 I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f0xx.h)(0x61EF1A0C)
 I (../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f072xb.h)(0x61EF1A0C)
 I (../Drivers/CMSIS/Include/core_cm0.h)(0x61EF19F2)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6025F66E)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6234D446)
 I (../Drivers/CMSIS/Include/cmsis_version.h)(0x61EF19F2)
 I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x61EF19F2)
 I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x61EF19F2)

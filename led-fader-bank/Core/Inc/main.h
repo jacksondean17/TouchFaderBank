@@ -28,6 +28,8 @@ extern "C" {
 
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f0xx_hal.h"
+#include "..\..\..\Core\Src\stm32f072b_discovery.h"
+
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -82,6 +84,47 @@ void Error_Handler(void);
 #define SWCLK_Pin GPIO_PIN_14
 #define SWCLK_GPIO_Port GPIOA
 /* USER CODE BEGIN Private defines */
+
+/* User can use this section to tailor TSCx/TSCx instance used and associated
+   resources */
+/* Definition for TSCx clock resources */
+#define TSCx                                        TSC
+#define TSCx_CLK_ENABLE()                           __HAL_RCC_TSC_CLK_ENABLE()
+#define TSCx_TS1_IO_GPIO_CLK_ENABLE()               __HAL_RCC_GPIOA_CLK_ENABLE()
+#define TSCx_TS2_IO_GPIO_CLK_ENABLE()               __HAL_RCC_GPIOA_CLK_ENABLE()
+#define TSCx_TS3_IO_GPIO_CLK_ENABLE()               __HAL_RCC_GPIOB_CLK_ENABLE()
+#define TSCx_TS1_CAPACITOR_GPIO_CLK_ENABLE()        __HAL_RCC_GPIOA_CLK_ENABLE()
+#define TSCx_TS2_CAPACITOR_GPIO_CLK_ENABLE()        __HAL_RCC_GPIOA_CLK_ENABLE()
+#define TSCx_TS3_CAPACITOR_GPIO_CLK_ENABLE()        __HAL_RCC_GPIOB_CLK_ENABLE()
+
+#define TSCx_FORCE_RESET()                          __HAL_RCC_TSC_FORCE_RESET()
+#define TSCx_RELEASE_RESET()                        __HAL_RCC_TSC_RELEASE_RESET()
+
+/* Definition for TSCx IO Pins */
+#define TSCx_TS1_IO_PIN                             GPIO_PIN_2
+#define TSCx_TS1_IO_GPIO_PORT                       GPIOA
+#define TSCx_TS1_IO_AF                              GPIO_AF3_TSC
+
+#define TSCx_TS2_IO_PIN                             GPIO_PIN_6
+#define TSCx_TS2_IO_GPIO_PORT                       GPIOA
+#define TSCx_TS2_IO_AF                              GPIO_AF3_TSC
+
+#define TSCx_TS3_IO_PIN                             GPIO_PIN_0
+#define TSCx_TS3_IO_GPIO_PORT                       GPIOB
+#define TSCx_TS3_IO_AF                              GPIO_AF3_TSC
+
+/* Definition for TSCx Sampling Capacitor Pins */
+#define TSCx_TS1_SAMPLING_PIN                       GPIO_PIN_3
+#define TSCx_TS1_SAMPLING_GPIO_PORT                 GPIOA
+#define TSCx_TS1_SAMPLING_AF                        GPIO_AF3_TSC
+
+#define TSCx_TS2_SAMPLING_PIN                       GPIO_PIN_7
+#define TSCx_TS2_SAMPLING_GPIO_PORT                 GPIOA
+#define TSCx_TS2_SAMPLING_AF                        GPIO_AF3_TSC
+
+#define TSCx_TS3_SAMPLING_PIN                       GPIO_PIN_1
+#define TSCx_TS3_SAMPLING_GPIO_PORT                 GPIOB
+#define TSCx_TS3_SAMPLING_AF                        GPIO_AF3_TSC
 
 /* USER CODE END Private defines */
 

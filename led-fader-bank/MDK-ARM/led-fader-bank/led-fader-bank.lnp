@@ -3,6 +3,7 @@
 "led-fader-bank\main.o"
 "led-fader-bank\stm32f0xx_it.o"
 "led-fader-bank\stm32f0xx_hal_msp.o"
+"led-fader-bank\stm32f072b_discovery.o"
 "led-fader-bank\stm32f0xx_ll_usb.o"
 "led-fader-bank\stm32f0xx_hal_i2c.o"
 "led-fader-bank\stm32f0xx_hal_i2c_ex.o"

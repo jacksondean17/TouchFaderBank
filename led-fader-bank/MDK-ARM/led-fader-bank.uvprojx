@@ -408,6 +408,16 @@
               <FileType>1</FileType>
               <FilePath>../Core/Src/stm32f0xx_hal_msp.c</FilePath>
             </File>
+            <File>
+              <FileName>stm32f072b_discovery.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Core\Src\stm32f072b_discovery.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f072b_discovery.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Core\Src\stm32f072b_discovery.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
