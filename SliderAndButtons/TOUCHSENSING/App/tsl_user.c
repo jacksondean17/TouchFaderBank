@@ -35,6 +35,8 @@ CONST TSL_ChannelSrc_T MyChannels_Src[TSLPRM_TOTAL_CHANNELS] =
     { CHANNEL_1_SRC, CHANNEL_1_IO_MSK, CHANNEL_1_GRP_MSK },
     { CHANNEL_2_SRC, CHANNEL_2_IO_MSK, CHANNEL_2_GRP_MSK },
     { CHANNEL_3_SRC, CHANNEL_3_IO_MSK, CHANNEL_3_GRP_MSK },
+    { CHANNEL_4_SRC, CHANNEL_4_IO_MSK, CHANNEL_4_GRP_MSK },
+    { CHANNEL_5_SRC, CHANNEL_5_IO_MSK, CHANNEL_5_GRP_MSK },
 };
 
 /* Destination (ROM) */
@@ -44,6 +46,8 @@ CONST TSL_ChannelDest_T MyChannels_Dest[TSLPRM_TOTAL_CHANNELS] =
     { CHANNEL_1_DEST },
     { CHANNEL_2_DEST },
     { CHANNEL_3_DEST },
+    { CHANNEL_4_DEST },
+    { CHANNEL_5_DEST },
 };
 
 /* Data (RAM) */
@@ -128,7 +132,9 @@ CONST TSL_TouchKeyMethods_T MyTKeys_Methods =
 
 CONST TSL_TouchKey_T MyTKeys[TSLPRM_TOTAL_TOUCHKEYS] =
 {
-  { &MyTKeys_Data[0], &MyTKeys_Param[0], &MyChannels_Data[CHANNEL_3_DEST], MyTKeys_StateMachine, &MyTKeys_Methods }
+  { &MyTKeys_Data[0], &MyTKeys_Param[0], &MyChannels_Data[CHANNEL_3_DEST], MyTKeys_StateMachine, &MyTKeys_Methods },
+  { &MyTKeys_Data[1], &MyTKeys_Param[1], &MyChannels_Data[CHANNEL_4_DEST], MyTKeys_StateMachine, &MyTKeys_Methods },
+  { &MyTKeys_Data[2], &MyTKeys_Param[2], &MyChannels_Data[CHANNEL_5_DEST], MyTKeys_StateMachine, &MyTKeys_Methods }
 };
 
 /*============================================================================*/
@@ -234,6 +240,8 @@ CONST TSL_LinRot_T MyLinRots[TSLPRM_TOTAL_LINROTS] =
 CONST TSL_Object_T MyObjects[TSLPRM_TOTAL_OBJECTS] =
 {
   { TSL_OBJ_TOUCHKEY, (TSL_TouchKey_T *)&MyTKeys[0] },
+  { TSL_OBJ_TOUCHKEY, (TSL_TouchKey_T *)&MyTKeys[1] },
+  { TSL_OBJ_TOUCHKEY, (TSL_TouchKey_T *)&MyTKeys[2] },
   { TSL_OBJ_LINEAR, (TSL_LinRot_T *)&MyLinRots[0] }
 };
 

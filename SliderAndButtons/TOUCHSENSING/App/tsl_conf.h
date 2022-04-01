@@ -40,7 +40,7 @@
 
 /** Total number of channels in application (range=1..255)
 */
-#define TSLPRM_TOTAL_CHANNELS (4)
+#define TSLPRM_TOTAL_CHANNELS (6)
 
 /** Total number of banks in application (range=1..255)
 */
@@ -49,7 +49,7 @@
 
 /** Total number of "Extended" TouchKeys in application (range=0..255)
 */
-#define TSLPRM_TOTAL_TOUCHKEYS (1)
+#define TSLPRM_TOTAL_TOUCHKEYS (3)
 
 /** Total number of "Basic" TouchKeys in application (range=0..255)
 */
@@ -73,7 +73,7 @@
 /** Total number of sensors/objects in application (range=1..255)
   - Count all TouchKeys, Linear and Rotary sensors
 */
-#define TSLPRM_TOTAL_OBJECTS (2)
+#define TSLPRM_TOTAL_OBJECTS (4)
 
 /** @} Common_Parameters_Number_Of_Elements */
 
@@ -157,12 +157,12 @@
 /** TouchKeys Detect state input threshold (range=0..255)
   - Enter Detect state if delta is above
 */
-#define TSLPRM_TKEY_DETECT_IN_TH (120)
+#define TSLPRM_TKEY_DETECT_IN_TH (20)
 
 /** TouchKeys Detect state output threshold (range=0..255)
   - Exit Detect state if delta is below
 */
-#define TSLPRM_TKEY_DETECT_OUT_TH (110)
+#define TSLPRM_TKEY_DETECT_OUT_TH (15)
 
 /** TouchKeys re-Calibration threshold (range=0..255)
   - @warning The value is inverted in the sensor state machine
