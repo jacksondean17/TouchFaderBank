@@ -28,7 +28,7 @@ extern "C" {
 
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f0xx_hal.h"
-#include "..\..\..\Core\Src\stm32f072b_discovery.h"
+#include "stm32f072b_discovery.h"
 
 
 /* Private includes ----------------------------------------------------------*/
