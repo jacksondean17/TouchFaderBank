@@ -61,80 +61,8 @@ TSL_ChannelData_T MyChannels_Data[TSLPRM_TOTAL_CHANNELS];
 CONST TSL_Bank_T MyBanks[TSLPRM_TOTAL_BANKS] = {
 /* 3CH_LIN_H_NBR1 bank definition*/
    {&MyChannels_Src[0], &MyChannels_Dest[0], MyChannels_Data, BANK_0_NBCHANNELS, BANK_0_MSK_CHANNELS, BANK_0_MSK_GROUPS},
-/* TOUCHKEYS bank(s) definition*/
+/* 3CH_LIN_H_NBR2 bank definition*/
    {&MyChannels_Src[3], &MyChannels_Dest[3], MyChannels_Data, BANK_1_NBCHANNELS, BANK_1_MSK_CHANNELS, BANK_1_MSK_GROUPS},
-};
-/*============================================================================*/
-/* Touchkey sensors                                                           */
-/*============================================================================*/
-
-/* Data (RAM) */
-TSL_TouchKeyData_T MyTKeys_Data[TSLPRM_TOTAL_TKEYS];
-
-/* Parameters (RAM) */
-TSL_TouchKeyParam_T MyTKeys_Param[TSLPRM_TOTAL_TKEYS];
-
-/* State Machine (ROM) */
-
-void MyTKeys_ErrorStateProcess(void);
-void MyTKeys_OffStateProcess(void);
-
-CONST TSL_State_T MyTKeys_StateMachine[] =
-{
-  /* Calibration states */
-  /*  0 */ { TSL_STATEMASK_CALIB,              TSL_tkey_CalibrationStateProcess },
-  /*  1 */ { TSL_STATEMASK_DEB_CALIB,          TSL_tkey_DebCalibrationStateProcess },
-  /* Release states */
-  /*  2 */ { TSL_STATEMASK_RELEASE,            TSL_tkey_ReleaseStateProcess },
-#if TSLPRM_USE_PROX > 0
-  /*  3 */ { TSL_STATEMASK_DEB_RELEASE_PROX,   TSL_tkey_DebReleaseProxStateProcess },
-#else
-  /*  3 */ { TSL_STATEMASK_DEB_RELEASE_PROX,   0 },
-#endif
-  /*  4 */ { TSL_STATEMASK_DEB_RELEASE_DETECT, TSL_tkey_DebReleaseDetectStateProcess },
-  /*  5 */ { TSL_STATEMASK_DEB_RELEASE_TOUCH,  TSL_tkey_DebReleaseTouchStateProcess },
-#if TSLPRM_USE_PROX > 0
-  /* Proximity states */
-  /*  6 */ { TSL_STATEMASK_PROX,               TSL_tkey_ProxStateProcess },
-  /*  7 */ { TSL_STATEMASK_DEB_PROX,           TSL_tkey_DebProxStateProcess },
-  /*  8 */ { TSL_STATEMASK_DEB_PROX_DETECT,    TSL_tkey_DebProxDetectStateProcess },
-  /*  9 */ { TSL_STATEMASK_DEB_PROX_TOUCH,     TSL_tkey_DebProxTouchStateProcess },
-#else
-  /*  6 */ { TSL_STATEMASK_PROX,               0 },
-  /*  7 */ { TSL_STATEMASK_DEB_PROX,           0 },
-  /*  8 */ { TSL_STATEMASK_DEB_PROX_DETECT,    0 },
-  /*  9 */ { TSL_STATEMASK_DEB_PROX_TOUCH,     0 },
-#endif
-  /* Detect states */
-  /* 10 */ { TSL_STATEMASK_DETECT,             TSL_tkey_DetectStateProcess },
-  /* 11 */ { TSL_STATEMASK_DEB_DETECT,         TSL_tkey_DebDetectStateProcess },
-  /* Touch state */
-  /* 12 */ { TSL_STATEMASK_TOUCH,              TSL_tkey_TouchStateProcess },
-  /* Error states */
-  /* 13 */ { TSL_STATEMASK_ERROR,              MyTKeys_ErrorStateProcess },
-  /* 14 */ { TSL_STATEMASK_DEB_ERROR_CALIB,    TSL_tkey_DebErrorStateProcess },
-  /* 15 */ { TSL_STATEMASK_DEB_ERROR_RELEASE,  TSL_tkey_DebErrorStateProcess },
-  /* 16 */ { TSL_STATEMASK_DEB_ERROR_PROX,     TSL_tkey_DebErrorStateProcess },
-  /* 17 */ { TSL_STATEMASK_DEB_ERROR_DETECT,   TSL_tkey_DebErrorStateProcess },
-  /* 18 */ { TSL_STATEMASK_DEB_ERROR_TOUCH,    TSL_tkey_DebErrorStateProcess },
-  /* Other states */
-  /* 19 */ { TSL_STATEMASK_OFF,                MyTKeys_OffStateProcess }
-};
-
-/* Methods for "extended" type (ROM) */
-CONST TSL_TouchKeyMethods_T MyTKeys_Methods =
-{
-  TSL_tkey_Init,
-  TSL_tkey_Process
-};
-
-/* TouchKeys list (ROM) */
-
-CONST TSL_TouchKey_T MyTKeys[TSLPRM_TOTAL_TOUCHKEYS] =
-{
-  { &MyTKeys_Data[0], &MyTKeys_Param[0], &MyChannels_Data[CHANNEL_3_DEST], MyTKeys_StateMachine, &MyTKeys_Methods },
-  { &MyTKeys_Data[1], &MyTKeys_Param[1], &MyChannels_Data[CHANNEL_4_DEST], MyTKeys_StateMachine, &MyTKeys_Methods },
-  { &MyTKeys_Data[2], &MyTKeys_Param[2], &MyChannels_Data[CHANNEL_5_DEST], MyTKeys_StateMachine, &MyTKeys_Methods }
 };
 
 /*============================================================================*/
@@ -213,6 +141,7 @@ CONST TSL_LinRotMethods_T MyLinRots_Methods =
      0xE6 to the LSB (0.90 x 256 = 230.4 -> rounded to 230 = 0xE6)
 */
 CONST uint16_t MyLinRot0_DeltaCoeff[3] = {0x0100, 0x0100, 0x0100};
+CONST uint16_t MyLinRot1_DeltaCoeff[3] = {0x0100, 0x0100, 0x0100};
 
 /* LinRots list (ROM)*/
 CONST TSL_LinRot_T MyLinRots[TSLPRM_TOTAL_LINROTS] =
@@ -229,6 +158,19 @@ CONST TSL_LinRot_T MyLinRots[TSLPRM_TOTAL_LINROTS] =
    TSL_POSCORR_3CH_LIN_H,
    MyLinRots_StateMachine,
    &MyLinRots_Methods
+   },
+   /* LinRot sensor 1 = S2 */
+   {
+   &MyLinRots_Data[1],
+   &MyLinRots_Param[1],
+   &MyChannels_Data[CHANNEL_3_DEST],
+   3, /* Number of channels */
+   MyLinRot1_DeltaCoeff,
+   (TSL_tsignPosition_T *)TSL_POSOFF_3CH_LIN_H,
+   TSL_SCTCOMP_3CH_LIN_H,
+   TSL_POSCORR_3CH_LIN_H,
+   MyLinRots_StateMachine,
+   &MyLinRots_Methods
    }
 };
 
@@ -239,10 +181,8 @@ CONST TSL_LinRot_T MyLinRots[TSLPRM_TOTAL_LINROTS] =
 /* List (ROM) */
 CONST TSL_Object_T MyObjects[TSLPRM_TOTAL_OBJECTS] =
 {
-  { TSL_OBJ_TOUCHKEY, (TSL_TouchKey_T *)&MyTKeys[0] },
-  { TSL_OBJ_TOUCHKEY, (TSL_TouchKey_T *)&MyTKeys[1] },
-  { TSL_OBJ_TOUCHKEY, (TSL_TouchKey_T *)&MyTKeys[2] },
-  { TSL_OBJ_LINEAR, (TSL_LinRot_T *)&MyLinRots[0] }
+  { TSL_OBJ_LINEAR, (TSL_LinRot_T *)&MyLinRots[0] },
+  { TSL_OBJ_LINEAR, (TSL_LinRot_T *)&MyLinRots[1] }
 };
 
 /* Group (RAM) */
@@ -558,12 +498,6 @@ void tsl_user_SetThresholds(void)
   * @param  None
   * @retval None
   */
-  void MyTKeys_ErrorStateProcess(void)
-{
-/* USER CODE BEGIN MyTKeys_ErrorStateProcess */
-  /* Add here your own processing when a sensor is in Error state */
-/* USER CODE END MyTKeys_ErrorStateProcess */
-}
 void MyLinRots_ErrorStateProcess(void)
 {
 /* USER CODE BEGIN MyLinRots_ErrorStateProcess */
@@ -576,13 +510,6 @@ void MyLinRots_ErrorStateProcess(void)
   * @param  None
   * @retval None
   */
-void MyTKeys_OffStateProcess(void)
-{
-/* USER CODE BEGIN MyTKeys_OffStateProcess */
-  /* Add here your own processing when a sensor is in Off state */
-/* USER CODE END MyTKeys_OffStateProcess */
-}
-
 void MyLinRots_OffStateProcess(void)
 {
 /* USER CODE BEGIN MyLinRots_OffStateProcess */

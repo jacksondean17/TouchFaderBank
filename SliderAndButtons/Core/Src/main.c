@@ -121,37 +121,57 @@ int main(void)
 
 				pos = LINEAR_POSITION(0);
 				
-				size = sprintf(sbuf, "chan0: %d\r\n", pos);
+				size = sprintf(sbuf, "slider 0: %d\r\n", pos);
 				HAL_UART_Transmit(&huart1, (uint8_t *)sbuf, size, 5000);
 				
 			} else {
 				HAL_GPIO_WritePin(GPIOC, LD4_Pin, GPIO_PIN_RESET);
 			}
 			
-			if (KEY_DETECT(0))
-			{
-				size = sprintf(sbuf, "key0: %d\r\n", MyTKeys[0].p_ChD->Delta);
-				HAL_UART_Transmit(&huart1, (uint8_t *)sbuf, size, 5000);
+			if (LINEAR_DETECT(1)) {
 				HAL_GPIO_WritePin(GPIOC, LD5_Pin, GPIO_PIN_SET);
+
+				pos = LINEAR_POSITION(1);
+				
+				size = sprintf(sbuf, "slider 1: %d\r\n", pos);
+				HAL_UART_Transmit(&huart1, (uint8_t *)sbuf, size, 5000);
+				size = sprintf(sbuf, "\tdelta 1: %d\r\n", MyLinRots[1].p_ChD[0].Delta);
+				HAL_UART_Transmit(&huart1, (uint8_t *)sbuf, size, 5000);
+				size = sprintf(sbuf, "\tdelta 2: %d\r\n", MyLinRots[1].p_ChD[1].Delta);
+				HAL_UART_Transmit(&huart1, (uint8_t *)sbuf, size, 5000);
+				size = sprintf(sbuf, "\tdelta 3: %d\r\n", MyLinRots[1].p_ChD[2].Delta);
+				HAL_UART_Transmit(&huart1, (uint8_t *)sbuf, size, 5000);
+				
+				
 			} else {
 				HAL_GPIO_WritePin(GPIOC, LD5_Pin, GPIO_PIN_RESET);
-			}
-			if (KEY_DETECT(1))
-			{
-				size = sprintf(sbuf, "key1: %d\r\n", MyTKeys[1].p_ChD->Delta);
-				HAL_UART_Transmit(&huart1, (uint8_t *)sbuf, size, 5000);
-				HAL_GPIO_WritePin(GPIOC, LD3_Pin, GPIO_PIN_SET);
-			} else {
-				HAL_GPIO_WritePin(GPIOC, LD3_Pin, GPIO_PIN_RESET);
-			}
-			if (KEY_DETECT(2))
-			{
-				size = sprintf(sbuf, "key2: %d\r\n", MyTKeys[2].p_ChD->Delta);
-				HAL_UART_Transmit(&huart1, (uint8_t *)sbuf, size, 5000);
-				HAL_GPIO_WritePin(GPIOC, LD6_Pin, GPIO_PIN_SET);
-			} else {
-				HAL_GPIO_WritePin(GPIOC, LD6_Pin, GPIO_PIN_RESET);
-			}
+			}				
+			
+			// 3 touch keys
+//			if (KEY_DETECT(0))
+//			{
+//				size = sprintf(sbuf, "key0: %d\r\n", MyTKeys[0].p_ChD->Delta);
+//				HAL_UART_Transmit(&huart1, (uint8_t *)sbuf, size, 5000);
+//				HAL_GPIO_WritePin(GPIOC, LD5_Pin, GPIO_PIN_SET);
+//			} else {
+//				HAL_GPIO_WritePin(GPIOC, LD5_Pin, GPIO_PIN_RESET);
+//			}
+//			if (KEY_DETECT(1))
+//			{
+//				size = sprintf(sbuf, "key1: %d\r\n", MyTKeys[1].p_ChD->Delta);
+//				HAL_UART_Transmit(&huart1, (uint8_t *)sbuf, size, 5000);
+//				HAL_GPIO_WritePin(GPIOC, LD3_Pin, GPIO_PIN_SET);
+//			} else {
+//				HAL_GPIO_WritePin(GPIOC, LD3_Pin, GPIO_PIN_RESET);
+//			}
+//			if (KEY_DETECT(2))
+//			{
+//				size = sprintf(sbuf, "key2: %d\r\n", MyTKeys[2].p_ChD->Delta);
+//				HAL_UART_Transmit(&huart1, (uint8_t *)sbuf, size, 5000);
+//				HAL_GPIO_WritePin(GPIOC, LD6_Pin, GPIO_PIN_SET);
+//			} else {
+//				HAL_GPIO_WritePin(GPIOC, LD6_Pin, GPIO_PIN_RESET);
+//			}
 		}
 				
     /* USER CODE END WHILE */

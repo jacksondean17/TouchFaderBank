@@ -49,7 +49,7 @@
 
 /** Total number of "Extended" TouchKeys in application (range=0..255)
 */
-#define TSLPRM_TOTAL_TOUCHKEYS (3)
+#define TSLPRM_TOTAL_TOUCHKEYS (0)
 
 /** Total number of "Basic" TouchKeys in application (range=0..255)
 */
@@ -58,7 +58,7 @@
 /** Total number of "Extended" Linear and Rotary sensors in application (range=0..255)
   - Count also the 1-channel linear sensor used as TouchKey
 */
-#define TSLPRM_TOTAL_LINROTS (1)
+#define TSLPRM_TOTAL_LINROTS (2)
 
 /** Total number of "Basic" Linear and Rotary sensors in application (range=0..255)
   - Count also the 1-channel linear sensor used as TouchKey
@@ -68,12 +68,12 @@
 /** Total number of "Extended & Basic" Linear and Rotary sensors in application (range=0..255)
   - Count also the 1-channel linear sensor used as TouchKey
 */
-#define TSLPRM_TOTAL_ALL_LINROTS (1)
+#define TSLPRM_TOTAL_ALL_LINROTS (2)
 
 /** Total number of sensors/objects in application (range=1..255)
   - Count all TouchKeys, Linear and Rotary sensors
 */
-#define TSLPRM_TOTAL_OBJECTS (4)
+#define TSLPRM_TOTAL_OBJECTS (2)
 
 /** @} Common_Parameters_Number_Of_Elements */
 
@@ -157,12 +157,12 @@
 /** TouchKeys Detect state input threshold (range=0..255)
   - Enter Detect state if delta is above
 */
-#define TSLPRM_TKEY_DETECT_IN_TH (20)
+#define TSLPRM_TKEY_DETECT_IN_TH (100)
 
 /** TouchKeys Detect state output threshold (range=0..255)
   - Exit Detect state if delta is below
 */
-#define TSLPRM_TKEY_DETECT_OUT_TH (15)
+#define TSLPRM_TKEY_DETECT_OUT_TH (95)
 
 /** TouchKeys re-Calibration threshold (range=0..255)
   - @warning The value is inverted in the sensor state machine
@@ -192,22 +192,22 @@
 /** Linear/Rotary Proximity state input threshold (range=0..255)
   - Enter Proximity state if delta is above
 */
-#define TSLPRM_LINROT_PROX_IN_TH (10)
+#define TSLPRM_LINROT_PROX_IN_TH (2)
 
 /** Linear/Rotary Proximity state output threshold (range=0..255)
   - Exit Proximity state if delta is below
 */
-#define TSLPRM_LINROT_PROX_OUT_TH (5)
+#define TSLPRM_LINROT_PROX_OUT_TH (1)
 
 /** Linear/Rotary Detect state input threshold (range=0..255)
   - Enter Detect state if delta is above
 */
-#define TSLPRM_LINROT_DETECT_IN_TH (80)
+#define TSLPRM_LINROT_DETECT_IN_TH (15)
 
 /** Linear/Rotary Detect state output threshold (range=0..255)
   - Exit Detect state if delta is below
 */
-#define TSLPRM_LINROT_DETECT_OUT_TH (75)
+#define TSLPRM_LINROT_DETECT_OUT_TH (10)
 
 /** Linear/Rotary re-Calibration threshold (range=0..255)
   - @warning The value is inverted in the sensor state machine
@@ -289,7 +289,7 @@
   - A Low value will result in a low resolution and will be less subject to noise.
   - A High value will result in a high resolution and will be more subject to noise.
 */
-#define TSLPRM_LINROT_RESOLUTION (4)
+#define TSLPRM_LINROT_RESOLUTION (8)
 
 /** Direction change threshold in position unit (range=0..255)
   - Defines the default threshold used during the change direction process.
