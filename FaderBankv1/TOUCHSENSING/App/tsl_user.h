@@ -108,9 +108,9 @@ typedef enum
 #define CHANNEL_11_SRC       (TSC_GROUP6_IDX)
 #define CHANNEL_11_DEST      (11)
 
-#define CHANNEL_12_IO_MSK    (TSC_GROUP5_IO4)
-#define CHANNEL_12_GRP_MSK   (TSC_GROUP5)
-#define CHANNEL_12_SRC       (TSC_GROUP5_IDX)
+#define CHANNEL_12_IO_MSK    (TSC_GROUP6_IO3)
+#define CHANNEL_12_GRP_MSK   (TSC_GROUP6)
+#define CHANNEL_12_SRC       (TSC_GROUP6_IDX)
 #define CHANNEL_12_DEST      (12)
 
 /* Shield IOs definition */

@@ -40,6 +40,14 @@
 "faderbankv1\tsl_object.o"
 "faderbankv1\tsl_time.o"
 "faderbankv1\tsl_filter.o"
+"faderbankv1\usb_device.o"
+"faderbankv1\usbd_desc.o"
+"faderbankv1\usbd_midi_if.o"
+"faderbankv1\usbd_conf.o"
+"faderbankv1\usbd_midi.o"
+"faderbankv1\usbd_core.o"
+"faderbankv1\usbd_ctlreq.o"
+"faderbankv1\usbd_ioreq.o"
 --strict --scatter "FaderBankv1\FaderBankv1.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers

@@ -289,7 +289,7 @@
   - A Low value will result in a low resolution and will be less subject to noise.
   - A High value will result in a high resolution and will be more subject to noise.
 */
-#define TSLPRM_LINROT_RESOLUTION (4)
+#define TSLPRM_LINROT_RESOLUTION (7)
 
 /** Direction change threshold in position unit (range=0..255)
   - Defines the default threshold used during the change direction process.
