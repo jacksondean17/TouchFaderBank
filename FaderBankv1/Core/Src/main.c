@@ -36,7 +36,7 @@
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
 #define SBUF_SIZE (128)
-#define DETAILED_TSC_DATA (0)
+#define DETAILED_TSC_DATA (1)
 	
 #define SERIAL_HANDLE (&huart3)
 /* USER CODE END PD */

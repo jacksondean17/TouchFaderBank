@@ -192,22 +192,22 @@
 /** Linear/Rotary Proximity state input threshold (range=0..255)
   - Enter Proximity state if delta is above
 */
-#define TSLPRM_LINROT_PROX_IN_TH (10)
+#define TSLPRM_LINROT_PROX_IN_TH (2)
 
 /** Linear/Rotary Proximity state output threshold (range=0..255)
   - Exit Proximity state if delta is below
 */
-#define TSLPRM_LINROT_PROX_OUT_TH (5)
+#define TSLPRM_LINROT_PROX_OUT_TH (1)
 
 /** Linear/Rotary Detect state input threshold (range=0..255)
   - Enter Detect state if delta is above
 */
-#define TSLPRM_LINROT_DETECT_IN_TH (80)
+#define TSLPRM_LINROT_DETECT_IN_TH (20)
 
 /** Linear/Rotary Detect state output threshold (range=0..255)
   - Exit Detect state if delta is below
 */
-#define TSLPRM_LINROT_DETECT_OUT_TH (75)
+#define TSLPRM_LINROT_DETECT_OUT_TH (15)
 
 /** Linear/Rotary re-Calibration threshold (range=0..255)
   - @warning The value is inverted in the sensor state machine
