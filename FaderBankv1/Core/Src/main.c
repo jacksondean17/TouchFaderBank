@@ -22,7 +22,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include <stdio.h>
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -32,10 +32,20 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
+#define SBUF_SIZE (128)
+#define DETAILED_TSC_DATA (0)
+	
+#define SERIAL_HANDLE (&huart3)
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
 /* USER CODE BEGIN PM */
+#define LINEAR_DETECT(chan) ((MyLinRots[chan].p_Data->StateId == TSL_STATEID_DETECT) || \
+                       (MyLinRots[chan].p_Data->StateId == TSL_STATEID_DEB_RELEASE_DETECT))
+#define LINEAR_POSITION(chan) (MyLinRots[chan].p_Data->Position)
+
+#define KEY_DETECT(chan) ((MyTKeys[chan].p_Data->StateId == TSL_STATEID_DETECT) || \
+                       (MyTKeys[chan].p_Data->StateId == TSL_STATEID_DEB_RELEASE_DETECT))
 
 /* USER CODE END PM */
 
@@ -49,7 +59,9 @@ UART_HandleTypeDef huart3;
 PCD_HandleTypeDef hpcd_USB_FS;
 
 /* USER CODE BEGIN PV */
-
+char sbuf[SBUF_SIZE];
+uint8_t pos;
+int size;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -61,11 +73,22 @@ static void MX_USART3_UART_Init(void);
 static void MX_USB_PCD_Init(void);
 /* USER CODE BEGIN PFP */
 
+static void PrintLinRotDetails(int chan);
+
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-
+static void PrintLinRotDetails(int chan) {
+		size = sprintf(sbuf, "slider %d: %d\r\n", chan, MyLinRots[chan].p_Data->Position);
+		HAL_UART_Transmit(SERIAL_HANDLE, (uint8_t *)sbuf, size, 5000);
+		size = sprintf(sbuf, "\tdelta 1: %d\r\n", MyLinRots[chan].p_ChD[0].Delta);
+		HAL_UART_Transmit(SERIAL_HANDLE, (uint8_t *)sbuf, size, 5000);
+		size = sprintf(sbuf, "\tdelta 2: %d\r\n", MyLinRots[chan].p_ChD[1].Delta);
+		HAL_UART_Transmit(SERIAL_HANDLE, (uint8_t *)sbuf, size, 5000);
+		size = sprintf(sbuf, "\tdelta 3: %d\r\n", MyLinRots[chan].p_ChD[2].Delta);
+		HAL_UART_Transmit(SERIAL_HANDLE, (uint8_t *)sbuf, size, 5000);
+}
 /* USER CODE END 0 */
 
 /**
@@ -75,6 +98,7 @@ static void MX_USB_PCD_Init(void);
 int main(void)
 {
   /* USER CODE BEGIN 1 */
+  tsl_user_status_t tsl_status;
 
   /* USER CODE END 1 */
 
@@ -108,15 +132,88 @@ int main(void)
 	HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_0);
 	HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_1);
 	HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_6);
+	
+	size = sprintf(sbuf, "Hello World!\r\n");
+	HAL_UART_Transmit(&huart3, (uint8_t *)sbuf, size, 5000);
 
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+	
+	uint8_t tkey_status = 0;
+	HAL_GPIO_WritePin(GPIOC, TKEY_LED_Pin, GPIO_PIN_RESET);
+	
   while (1)
-  {
-    /* USER CODE END WHILE */
+  {	
+		tsl_status = tsl_user_Exec();
+		if (tsl_status != TSL_USER_STATUS_BUSY)
+		{
+			for (int chan = 0; chan < TSLPRM_TOTAL_LINROTS; chan++) {
+				if (LINEAR_DETECT(chan)) {
+					HAL_GPIO_WritePin(GPIOC, LED2_Pin, GPIO_PIN_SET);
+					pos = LINEAR_POSITION(chan);
+					// TODO: UpdateSliderPosition(pos);
+					if (DETAILED_TSC_DATA) {
+						PrintLinRotDetails(chan);
+					} else {
+						size = sprintf(sbuf, "slider %d: %d\r\n", chan, pos);
+						HAL_UART_Transmit(SERIAL_HANDLE, (uint8_t *)sbuf, size, 5000);						
+					}
+				} else {
+					HAL_GPIO_WritePin(GPIOC, LED2_Pin, GPIO_PIN_RESET);
+				}
+			}
+			
+			if (KEY_DETECT(0)) {
+				if (tkey_status) {
+					// do nothing	
+				} else {
+					tkey_status = 1;
+					HAL_GPIO_WritePin(GPIOC, TKEY_LED_Pin, GPIO_PIN_SET);
+				}
+			} else {
+				if (tkey_status) {
+					tkey_status = 0;
+					HAL_GPIO_WritePin(GPIOC, TKEY_LED_Pin, GPIO_PIN_RESET);
+				}
+			}
+			
+			
+//			if (LINEAR_DETECT(0))
+//			{
+//				HAL_GPIO_WritePin(GPIOC, LED1_Pin, GPIO_PIN_SET);
 
+//				pos = LINEAR_POSITION(0);
+//				
+//				size = sprintf(sbuf, "slider 0: %d\r\n", pos);
+//				HAL_UART_Transmit(&huart3, (uint8_t *)sbuf, size, 5000);
+//				
+//			} else {
+//				HAL_GPIO_WritePin(GPIOC, LED1_Pin, GPIO_PIN_RESET);
+//			}
+//			
+//			if (LINEAR_DETECT(1)) {
+//				HAL_GPIO_WritePin(GPIOC, LED2_Pin, GPIO_PIN_SET);
+
+//				pos = LINEAR_POSITION(1);
+//				
+//				size = sprintf(sbuf, "slider 1: %d\r\n", pos);
+//				HAL_UART_Transmit(&huart3, (uint8_t *)sbuf, size, 5000);
+//				size = sprintf(sbuf, "\tdelta 1: %d\r\n", MyLinRots[1].p_ChD[0].Delta);
+//				HAL_UART_Transmit(&huart3, (uint8_t *)sbuf, size, 5000);
+//				size = sprintf(sbuf, "\tdelta 2: %d\r\n", MyLinRots[1].p_ChD[1].Delta);
+//				HAL_UART_Transmit(&huart3, (uint8_t *)sbuf, size, 5000);
+//				size = sprintf(sbuf, "\tdelta 3: %d\r\n", MyLinRots[1].p_ChD[2].Delta);
+//				HAL_UART_Transmit(&huart3, (uint8_t *)sbuf, size, 5000);
+//				
+//				
+//			} else {
+//				HAL_GPIO_WritePin(GPIOC, LED2_Pin, GPIO_PIN_RESET);
+//			}			
+		}			
+    /* USER CODE END WHILE */
+		
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
