@@ -23,6 +23,7 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include <stdio.h>
+#include "fader_bank.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -108,6 +109,7 @@ int main(void)
   HAL_Init();
 
   /* USER CODE BEGIN Init */
+	InitFaderBank();
 
   /* USER CODE END Init */
 
@@ -153,11 +155,15 @@ int main(void)
 				if (LINEAR_DETECT(chan)) {
 					HAL_GPIO_WritePin(GPIOC, LED2_Pin, GPIO_PIN_SET);
 					pos = LINEAR_POSITION(chan);
+					
+					
+					SET_FADER_POSITION(chan, pos);
 					// TODO: UpdateSliderPosition(pos);
+
 					if (DETAILED_TSC_DATA) {
 						PrintLinRotDetails(chan);
 					} else {
-						size = sprintf(sbuf, "slider %d: %d\r\n", chan, pos);
+						size = sprintf(sbuf, "slider %d: %d\r\n", chan, FADER_POSITION(chan));
 						HAL_UART_Transmit(SERIAL_HANDLE, (uint8_t *)sbuf, size, 5000);						
 					}
 				} else {

@@ -408,6 +408,11 @@
               <FileType>1</FileType>
               <FilePath>../Core/Src/stm32f0xx_hal_msp.c</FilePath>
             </File>
+            <File>
+              <FileName>fader_bank.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Core/Src/fader_bank.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

@@ -3,6 +3,7 @@
 "faderbankv1\main.o"
 "faderbankv1\stm32f0xx_it.o"
 "faderbankv1\stm32f0xx_hal_msp.o"
+"faderbankv1\fader_bank.o"
 "faderbankv1\touchsensing.o"
 "faderbankv1\tsl_user.o"
 "faderbankv1\stmcriticalsection.o"
