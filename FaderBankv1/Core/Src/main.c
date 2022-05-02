@@ -36,6 +36,7 @@
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
 #define SBUF_SIZE (128)
+#define I2CBUF_SIZE (256)
 #define DETAILED_TSC_DATA (1)
 	
 #define SERIAL_HANDLE (&huart3)
@@ -63,6 +64,8 @@ UART_HandleTypeDef huart3;
 char sbuf[SBUF_SIZE];
 uint8_t pos;
 int size;
+
+uint8_t i2cbuf[I2CBUF_SIZE];
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -74,6 +77,7 @@ static void MX_USART3_UART_Init(void);
 /* USER CODE BEGIN PFP */
 
 static void PrintLinRotDetails(int chan);
+static void LED_Driver_Write(uint8_t* buffer, uint8_t n_bytes);
 
 /* USER CODE END PFP */
 
@@ -88,6 +92,53 @@ static void PrintLinRotDetails(int chan) {
 		HAL_UART_Transmit(SERIAL_HANDLE, (uint8_t *)sbuf, size, 5000);
 		size = sprintf(sbuf, "\tdelta 3: %d\r\n", MyLinRots[chan].p_ChD[2].Delta);
 		HAL_UART_Transmit(SERIAL_HANDLE, (uint8_t *)sbuf, size, 5000);
+}
+
+static void InitLedDrivers() {
+	// Disable software shutdown mode ...
+	i2cbuf[0] = 0x00; // Address of Shutdown Register
+	i2cbuf[1] = 0x01; // Setting for normal operation
+	LED_Driver_Write(i2cbuf, 2);
+	
+	// Write OUT1 PWM Register ...
+	
+	i2cbuf[0] = 0x01; // Address of OUT1 PWM Register
+	i2cbuf[1] = 0x20; // Setting for half magnitude
+	
+	LED_Driver_Write(i2cbuf, 2);
+	
+	// Write OUT1 LED Control Register ...
+	
+	i2cbuf[0] = 0x26; // Address of OUT1 LED Control Register
+	i2cbuf[1] = 0x01; // Setting for LED on
+	
+	LED_Driver_Write(i2cbuf, 2);
+	
+	// Write PWM Registers.
+	i2cbuf[0] = 0x01;
+	for (int i = 1; i < 17; i++) i2cbuf[i] = 0x20;
+	LED_Driver_Write(i2cbuf, 17);
+	
+	// Write LED Control Registers.
+	i2cbuf[0] = 0x28;
+	for (int i = 1; i < 17; i++) i2cbuf[i] = 0x01;
+	LED_Driver_Write(i2cbuf, 17);
+
+	// Write PWM Update Register ...
+	
+	i2cbuf[0] = 0x25; // Address of PWM Update Register
+	i2cbuf[1] = 0x00; // Setting to trigger update for registers 01h~24h, 26h~49h
+	
+	LED_Driver_Write(i2cbuf, 2);
+}
+
+static const uint8_t ADDR_LDRVR = 0x3C << 1;
+
+static void LED_Driver_Write(uint8_t* buffer, uint8_t n_bytes) {
+	if (HAL_I2C_Master_Transmit(&hi2c1, ADDR_LDRVR, buffer, n_bytes, 10000) != HAL_OK) {
+		size = sprintf(sbuf, "\r\nI2C ERROR"); // ERROR
+		HAL_UART_Transmit(SERIAL_HANDLE, (uint8_t *)sbuf, size, 5000);
+	}
 }
 /* USER CODE END 0 */
 
@@ -131,6 +182,7 @@ int main(void)
 	
 	size = sprintf(sbuf, "Hello World!\r\n");
 	HAL_UART_Transmit(&huart3, (uint8_t *)sbuf, size, 5000);
+	InitLedDrivers();
 
 	// Wait for USB to connect
 	HAL_Delay(1000);
