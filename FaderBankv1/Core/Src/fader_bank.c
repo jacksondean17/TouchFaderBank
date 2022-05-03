@@ -19,10 +19,33 @@
 	
 	FB_Track_T FaderBank[FB_TOTAL_TRACKS];
 	
-	void InitFaderBank(void) {
+	#define LED_BUF_SIZE (33)
+	uint8_t led_buf[LED_BUF_SIZE];
+	
+	void InitFaderBank(I2C_HandleTypeDef *hi2c) {
+		InitDriverHAL(hi2c);
+		
 		for (int i = 0; i < FB_TOTAL_TRACKS; i++) {
 			FaderBank[i].pos = 0;
+			InitLEDDriver(i);
 		}
+	}
+	
+	void SetFaderTrack(uint8_t track_id, uint8_t pos) {
+		FaderBank[track_id].pos = pos;
+		int level = pos >> 3; // convert from range [0, 127] to [0, 16]
+		
+		led_buf[0] = 0x26; // TODO move this logic to LED Driver code
+		for (int i = 1; i <= level; i++) {
+			led_buf[17-i] = 0x01;
+			led_buf[16+i] = 0x01;
+		}
+		for (int i = level+1; i <= 16; i++) {
+			led_buf[17-i] = 0x00;
+			led_buf[16+i] = 0x00;
+		}
+		
+		SetLEDs(track_id, led_buf, LED_BUF_SIZE);
 	}
 	
 	

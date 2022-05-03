@@ -22,22 +22,27 @@
 #ifdef __cplusplus
 extern "C" {
 #endif
+
+#include "IS31FL3236A_led_driver.h"
+
+
 	
 #define FB_TOTAL_TRACKS (4)
 
 #define FADER_POSITION(track) (FaderBank[track].pos)
-#define SET_FADER_POSITION(track, newPos) (FaderBank[track].pos = newPos)
 
 	
 /** Position of a Fader Track sensor.
   */
 typedef struct {
-		int 		pos;
+		uint8_t 		pos;
 } 
 FB_Track_T;
 
 
-void InitFaderBank(void);
+void InitFaderBank(I2C_HandleTypeDef *hi2c);
+
+void SetFaderTrack(uint8_t track_id, uint8_t pos);
 
 
 extern FB_Track_T FaderBank[];
