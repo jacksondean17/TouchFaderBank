@@ -29,7 +29,12 @@ HAL_StatusTypeDef _LED_Driver_Write(I2C_HandleTypeDef *hi2c, uint8_t addr, uint8
 }
 
 void LED_Driver_Write(uint8_t addr, uint8_t* buffer, uint8_t n_bytes) {
-	_LED_Driver_Write(_hi2c, addr, buffer, n_bytes);
+	HAL_StatusTypeDef status = _LED_Driver_Write(_hi2c, addr, buffer, n_bytes);
+	if (status != HAL_OK) {
+		//wtf
+		int i = 1;
+		i++;
+	}
 		// Write PWM Update Register ...
 	_LED_Driver_Write(_hi2c, addr, UPDATE_REG_DATA, 2);
 }

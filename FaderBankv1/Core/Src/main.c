@@ -37,7 +37,7 @@
 /* USER CODE BEGIN PD */
 #define SBUF_SIZE (128)
 #define I2CBUF_SIZE (256)
-#define DETAILED_TSC_DATA (1)
+#define DETAILED_TSC_DATA (0)
 	
 #define SERIAL_HANDLE (&huart3)
 
@@ -50,6 +50,10 @@
 #define LINEAR_DETECT(chan) ((MyLinRots[chan].p_Data->StateId == TSL_STATEID_DETECT) || \
                        (MyLinRots[chan].p_Data->StateId == TSL_STATEID_DEB_RELEASE_DETECT))
 #define LINEAR_POSITION(chan) (MyLinRots[chan].p_Data->Position)
+
+#define LINEAR_DIRECTION(chan) (MyLinRots[chan].p_Data->Direction)
+
+#define LINEAR_CHANGE(chan) (MyLinRots[chan].p_Data->Change)
 
 #define KEY_DETECT(chan) ((MyTKeys[chan].p_Data->StateId == TSL_STATEID_DETECT) || \
                        (MyTKeys[chan].p_Data->StateId == TSL_STATEID_DEB_RELEASE_DETECT))
@@ -69,6 +73,10 @@ uint8_t pos;
 int size;
 extern uint8_t midi_control_pending;
 extern MIDI_Control_T last_midi_control;
+
+#ifdef RELATIVE_FADER_MOVEMENT
+uint8_t set_initial_fader_position[] = {0, 0, 0, 0};
+#endif
 
 //uint8_t i2cbuf[I2CBUF_SIZE];
 /* USER CODE END PV */
@@ -166,17 +174,38 @@ int main(void)
 					HAL_GPIO_WritePin(GPIOC, LED2_Pin, GPIO_PIN_SET);
 					pos = LINEAR_POSITION(chan);
 					
-					
-					SetFaderTrack(chan, pos);
-					MIDI_cc_update(0, chan, pos);
+#ifdef RELATIVE_FADER_MOVEMENT
+					if (set_initial_fader_position[chan]) {
+						SetFaderTrackStartPos(chan, pos);
+						set_initial_fader_position[chan] = 0;
+					}
 
-					// TODO: UpdateSliderPosition(pos);
+					if (LINEAR_CHANGE(chan)) {
+						size = sprintf(sbuf, "\tSTATE CHANGED ==============\r\n");
+						HAL_UART_Transmit(SERIAL_HANDLE, (uint8_t *)sbuf, size, 5000);	
+						
+						set_initial_fader_position[chan] = 1;
+					}
+					
+					int c = AdjustFaderTrack(chan, pos);
+					size = sprintf(sbuf, "\tchange: %d\r\n", c);
+					HAL_UART_Transmit(SERIAL_HANDLE, (uint8_t *)sbuf, size, 5000);	
+					
+
+#else
+					SetFaderTrack(chan, pos);
+					
+#endif
+					
+					
+					MIDI_cc_update(0, chan, FADER_POSITION(chan));
+
 
 					if (DETAILED_TSC_DATA) {
 						PrintLinRotDetails(chan);
 					} else {
 						size = sprintf(sbuf, "slider %d: %d\r\n", chan, FADER_POSITION(chan));
-						HAL_UART_Transmit(SERIAL_HANDLE, (uint8_t *)sbuf, size, 5000);						
+						HAL_UART_Transmit(SERIAL_HANDLE, (uint8_t *)sbuf, size, 5000);												
 					}
 					
 				} else {

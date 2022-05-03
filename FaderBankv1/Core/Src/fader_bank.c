@@ -19,6 +19,7 @@
 	
 	FB_Track_T FaderBank[FB_TOTAL_TRACKS];
 	
+	
 	#define LED_BUF_SIZE (33)
 	uint8_t led_buf[LED_BUF_SIZE];
 	
@@ -48,6 +49,20 @@
 		}
 		
 		SetLEDs(track_id, led_buf, LED_BUF_SIZE);
+	}
+	
+	int AdjustFaderTrack(uint8_t track_id, uint8_t pos) {
+		int change = pos - FaderBank[track_id].rel_starting_pos;
+		
+		uint8_t new_pos = FaderBank[track_id].abs_starting_pos + change;
+
+		SetFaderTrack(track_id, new_pos);
+		return change;
+	}
+	
+	void SetFaderTrackStartPos(uint8_t track_id, uint8_t pos) {
+		FaderBank[track_id].rel_starting_pos = pos;
+		FaderBank[track_id].abs_starting_pos = FaderBank[track_id].pos;
 	}
 	
 	

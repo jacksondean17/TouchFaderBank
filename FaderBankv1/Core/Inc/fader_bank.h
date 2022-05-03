@@ -25,7 +25,7 @@ extern "C" {
 
 #include "IS31FL3236A_led_driver.h"
 
-
+// #define RELATIVE_FADER_MOVEMENT
 	
 #define FB_TOTAL_TRACKS (4)
 
@@ -36,6 +36,8 @@ extern "C" {
   */
 typedef struct {
 		uint8_t 		pos;
+		uint8_t 		rel_starting_pos;
+		uint8_t 		abs_starting_pos;
 } 
 FB_Track_T;
 
@@ -43,6 +45,10 @@ FB_Track_T;
 void InitFaderBank(I2C_HandleTypeDef *hi2c);
 
 void SetFaderTrack(uint8_t track_id, uint8_t pos);
+
+int AdjustFaderTrack(uint8_t track_id, uint8_t pos);
+
+void SetFaderTrackStartPos(uint8_t track_id, uint8_t pos);
 
 
 extern FB_Track_T FaderBank[];
