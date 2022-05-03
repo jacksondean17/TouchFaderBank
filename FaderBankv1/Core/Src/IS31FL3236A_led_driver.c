@@ -45,7 +45,7 @@ void InitLEDDriver(uint8_t id) {
 	i2cbuf[1] = 0x01; // Setting for normal operation
 	LED_Driver_Write(addr, i2cbuf, 2);
 	
-	i2cbuf[0] = 0x28;
+	i2cbuf[0] = 0x26;
 	for (int i = 1; i <= 36; i++) {
 		i2cbuf[i] = 0;
 	}
