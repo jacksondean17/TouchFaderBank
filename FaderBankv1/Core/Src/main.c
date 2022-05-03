@@ -67,7 +67,8 @@ UART_HandleTypeDef huart3;
 char sbuf[SBUF_SIZE];
 uint8_t pos;
 int size;
-
+extern uint8_t midi_control_pending;
+extern MIDI_Control_T last_midi_control;
 
 //uint8_t i2cbuf[I2CBUF_SIZE];
 /* USER CODE END PV */
@@ -152,6 +153,11 @@ int main(void)
 	
   while (1)
   {	
+		if (midi_control_pending) {
+			SetFaderTrack(last_midi_control.controller_number, last_midi_control.controller_value);
+			midi_control_pending = 0;
+		}
+		
 		tsl_status = tsl_user_Exec();
 		if (tsl_status != TSL_USER_STATUS_BUSY)
 		{
@@ -193,37 +199,6 @@ int main(void)
 			}
 			
 			
-//			if (LINEAR_DETECT(0))
-//			{
-//				HAL_GPIO_WritePin(GPIOC, LED1_Pin, GPIO_PIN_SET);
-
-//				pos = LINEAR_POSITION(0);
-//				
-//				size = sprintf(sbuf, "slider 0: %d\r\n", pos);
-//				HAL_UART_Transmit(&huart3, (uint8_t *)sbuf, size, 5000);
-//				
-//			} else {
-//				HAL_GPIO_WritePin(GPIOC, LED1_Pin, GPIO_PIN_RESET);
-//			}
-//			
-//			if (LINEAR_DETECT(1)) {
-//				HAL_GPIO_WritePin(GPIOC, LED2_Pin, GPIO_PIN_SET);
-
-//				pos = LINEAR_POSITION(1);
-//				
-//				size = sprintf(sbuf, "slider 1: %d\r\n", pos);
-//				HAL_UART_Transmit(&huart3, (uint8_t *)sbuf, size, 5000);
-//				size = sprintf(sbuf, "\tdelta 1: %d\r\n", MyLinRots[1].p_ChD[0].Delta);
-//				HAL_UART_Transmit(&huart3, (uint8_t *)sbuf, size, 5000);
-//				size = sprintf(sbuf, "\tdelta 2: %d\r\n", MyLinRots[1].p_ChD[1].Delta);
-//				HAL_UART_Transmit(&huart3, (uint8_t *)sbuf, size, 5000);
-//				size = sprintf(sbuf, "\tdelta 3: %d\r\n", MyLinRots[1].p_ChD[2].Delta);
-//				HAL_UART_Transmit(&huart3, (uint8_t *)sbuf, size, 5000);
-//				
-//				
-//			} else {
-//				HAL_GPIO_WritePin(GPIOC, LED2_Pin, GPIO_PIN_RESET);
-//			}			
 		}			
     /* USER CODE END WHILE */
 

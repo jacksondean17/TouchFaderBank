@@ -22,6 +22,11 @@
 /** @defgroup USBD_MIDI_Private_TypesDefinitions
   * @{
   */
+	
+uint8_t midi_control_pending = 0;
+MIDI_Control_T last_midi_control;
+
+	
 /**
   * @}
   */
@@ -119,19 +124,25 @@ static int8_t MIDI_Send (uint8_t* buffer, uint32_t length)
 static int8_t MIDI_Receive (uint8_t* buffer, uint32_t length)
 {
 	HAL_GPIO_TogglePin(GPIOC, LED2_Pin);
-
+	
   uint8_t chan = buffer[1] & 0xf;
   uint8_t msgtype = buffer[1] & 0xf0;
   uint8_t b1 =  buffer[2];
   uint8_t b2 =  buffer[3];
   uint16_t b = ((b2 & 0x7f) << 7) | (b1 & 0x7f);
-  
+
   switch (msgtype) {
   case 0xF0:
     if(chan == 0x0F) {
         NVIC_SystemReset(); // Reset into DFU mode
     }
   	break;
+	case 0xB0: //control signal
+		midi_control_pending = 1;
+		last_midi_control.channel = chan;
+		last_midi_control.controller_number = b1;
+		last_midi_control.controller_value = b2;
+		break;
   default:
   	break;
   }

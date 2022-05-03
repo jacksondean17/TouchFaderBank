@@ -1,7 +1,7 @@
 Dependencies for Project 'FaderBankv1', Target 'FaderBankv1': (DO NOT MODIFY !)
 CompilerVersion: 5060960::V5.06 update 7 (build 960)::.\ARMCC
 F (startup_stm32f072xb.s)(0x62702D50)(--cpu Cortex-M0 --pd "__EVAL SETA 1" -g --apcs=interwork -I.\RTE\_FaderBankv1-IC:\Users\jacks\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\jacks\AppData\Local\Arm\Packs\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include--pd "__UVISION_VERSION SETA 536" --pd "_RTE_ SETA 1" --pd "STM32F072xB SETA 1" --pd "_RTE_ SETA 1"--list startup_stm32f072xb.lst --xref -o faderbankv1\startup_stm32f072xb.o --depend faderbankv1\startup_stm32f072xb.d)
-F (../Core/Src/main.c)(0x627093EF)(--c99 -c --cpu Cortex-M0 -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../TOUCHSENSING/App -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Core/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I ../Middlewares/ST/STM32_TouchSensing_Library/inc -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/MIDI/Inc -I ../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_FaderBankv1-IC:\Users\jacks\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\jacks\AppData\Local\Arm\Packs\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F072xB -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F072xB-o faderbankv1\main.o --omf_browse faderbankv1\main.crf --depend faderbankv1\main.d)
+F (../Core/Src/main.c)(0x6270994B)(--c99 -c --cpu Cortex-M0 -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../TOUCHSENSING/App -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Core/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I ../Middlewares/ST/STM32_TouchSensing_Library/inc -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/MIDI/Inc -I ../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_FaderBankv1-IC:\Users\jacks\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\jacks\AppData\Local\Arm\Packs\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F072xB -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F072xB-o faderbankv1\main.o --omf_browse faderbankv1\main.crf --depend faderbankv1\main.d)
 I (../Core/Inc/main.h)(0x62702D4F)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h)(0x62702D50)
 I (../Core/Inc/stm32f0xx_hal_conf.h)(0x62704EB0)
@@ -61,7 +61,7 @@ I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x6025E854)
 I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x6025E85E)
 I (../Core/Inc/fader_bank.h)(0x627093E4)
 I (../Core/Inc/IS31FL3236A_led_driver.h)(0x6270935D)
-I (../USB_DEVICE/App/usbd_midi_if.h)(0x623BB0C0)
+I (../USB_DEVICE/App/usbd_midi_if.h)(0x627097E2)
 I (../Middlewares/ST/STM32_USB_Device_Library/Class/MIDI/Inc/usbd_midi.h)(0x623BB0C0)
 I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h)(0x62461D5D)
 I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_core.h)(0x62461D5D)
@@ -1621,7 +1621,7 @@ I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h)(0x62461D5D)
 I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ctlreq.h)(0x62461D5D)
 I (..\USB_DEVICE\App\usbd_desc.h)(0x62704EAF)
 I (../Middlewares/ST/STM32_USB_Device_Library/Class/MIDI/Inc/usbd_midi.h)(0x623BB0C0)
-I (..\USB_DEVICE\App\usbd_midi_if.h)(0x623BB0C0)
+I (..\USB_DEVICE\App\usbd_midi_if.h)(0x627097E2)
 F (..\USB_DEVICE\App\usbd_desc.c)(0x62704EAF)(--c99 -c --cpu Cortex-M0 -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../TOUCHSENSING/App -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Core/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I ../Middlewares/ST/STM32_TouchSensing_Library/inc -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/MIDI/Inc -I ../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_FaderBankv1-IC:\Users\jacks\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\jacks\AppData\Local\Arm\Packs\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F072xB -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F072xB-o faderbankv1\usbd_desc.o --omf_browse faderbankv1\usbd_desc.crf --depend faderbankv1\usbd_desc.d)
 I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_core.h)(0x62461D5D)
 I (../USB_DEVICE/Target/usbd_conf.h)(0x62704EAF)
@@ -1666,8 +1666,8 @@ I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h)(0x62461D5D)
 I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h)(0x62461D5D)
 I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ctlreq.h)(0x62461D5D)
 I (..\USB_DEVICE\App\usbd_desc.h)(0x62704EAF)
-F (..\USB_DEVICE\App\usbd_midi_if.c)(0x6270517D)(--c99 -c --cpu Cortex-M0 -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../TOUCHSENSING/App -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Core/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I ../Middlewares/ST/STM32_TouchSensing_Library/inc -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/MIDI/Inc -I ../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_FaderBankv1-IC:\Users\jacks\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\jacks\AppData\Local\Arm\Packs\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F072xB -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F072xB-o faderbankv1\usbd_midi_if.o --omf_browse faderbankv1\usbd_midi_if.crf --depend faderbankv1\usbd_midi_if.d)
-I (..\USB_DEVICE\App\usbd_midi_if.h)(0x623BB0C0)
+F (..\USB_DEVICE\App\usbd_midi_if.c)(0x6270989A)(--c99 -c --cpu Cortex-M0 -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../TOUCHSENSING/App -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Core/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I ../Middlewares/ST/STM32_TouchSensing_Library/inc -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/MIDI/Inc -I ../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_FaderBankv1-IC:\Users\jacks\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\jacks\AppData\Local\Arm\Packs\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F072xB -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F072xB-o faderbankv1\usbd_midi_if.o --omf_browse faderbankv1\usbd_midi_if.crf --depend faderbankv1\usbd_midi_if.d)
+I (..\USB_DEVICE\App\usbd_midi_if.h)(0x627097E2)
 I (../Middlewares/ST/STM32_USB_Device_Library/Class/MIDI/Inc/usbd_midi.h)(0x623BB0C0)
 I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h)(0x62461D5D)
 I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h)(0x62461D5D)

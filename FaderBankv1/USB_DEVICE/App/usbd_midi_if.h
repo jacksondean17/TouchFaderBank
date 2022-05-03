@@ -18,6 +18,13 @@
 #include "usbd_midi.h"
 
 /* Exported types ------------------------------------------------------------*/
+typedef struct {
+	uint8_t channel;
+	uint8_t controller_number;
+	uint8_t controller_value;
+}
+MIDI_Control_T;
+
 /* Exported constants --------------------------------------------------------*/
 
 extern USBD_HandleTypeDef hUsbDeviceFS;
