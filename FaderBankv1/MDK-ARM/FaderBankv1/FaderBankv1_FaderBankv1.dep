@@ -1,7 +1,7 @@
 Dependencies for Project 'FaderBankv1', Target 'FaderBankv1': (DO NOT MODIFY !)
 CompilerVersion: 5060960::V5.06 update 7 (build 960)::.\ARMCC
 F (startup_stm32f072xb.s)(0x62702D50)(--cpu Cortex-M0 --pd "__EVAL SETA 1" -g --apcs=interwork -I.\RTE\_FaderBankv1-IC:\Users\jacks\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\jacks\AppData\Local\Arm\Packs\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include--pd "__UVISION_VERSION SETA 536" --pd "_RTE_ SETA 1" --pd "STM32F072xB SETA 1" --pd "_RTE_ SETA 1"--list startup_stm32f072xb.lst --xref -o faderbankv1\startup_stm32f072xb.o --depend faderbankv1\startup_stm32f072xb.d)
-F (../Core/Src/main.c)(0x627207C1)(--c99 -c --cpu Cortex-M0 -D__EVAL -g -O1 --apcs=interwork --split_sections -I ../TOUCHSENSING/App -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Core/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I ../Middlewares/ST/STM32_TouchSensing_Library/inc -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/MIDI/Inc -I ../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_FaderBankv1-IC:\Users\jacks\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\jacks\AppData\Local\Arm\Packs\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F072xB -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F072xB-o faderbankv1\main.o --omf_browse faderbankv1\main.crf --depend faderbankv1\main.d)
+F (../Core/Src/main.c)(0x62721716)(--c99 -c --cpu Cortex-M0 -D__EVAL -g -O1 --apcs=interwork --split_sections -I ../TOUCHSENSING/App -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Core/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I ../Middlewares/ST/STM32_TouchSensing_Library/inc -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/MIDI/Inc -I ../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_FaderBankv1-IC:\Users\jacks\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\jacks\AppData\Local\Arm\Packs\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F072xB -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F072xB-o faderbankv1\main.o --omf_browse faderbankv1\main.crf --depend faderbankv1\main.d)
 I (../Core/Inc/main.h)(0x62702D4F)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h)(0x62702D50)
 I (../Core/Inc/stm32f0xx_hal_conf.h)(0x62704EB0)
@@ -37,7 +37,7 @@ I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_tsc.h)(0x62461D68)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_uart.h)(0x62702D50)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_uart_ex.h)(0x62702D50)
 I (../TOUCHSENSING/App/touchsensing.h)(0x62702D50)
-I (../TOUCHSENSING/App/tsl_conf.h)(0x6272081A)
+I (../TOUCHSENSING/App/tsl_conf.h)(0x6272161B)
 I (../Middlewares/ST/STM32_TouchSensing_Library/inc/tsl_acq_tsc.h)(0x62461D5D)
 I (../Middlewares/ST/STM32_TouchSensing_Library/inc/tsl_types.h)(0x62461D5D)
 I (../Middlewares/ST/STM32_TouchSensing_Library/inc/tsl_check_config_tsc.h)(0x62461D5D)
@@ -60,7 +60,7 @@ I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x6025E854)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x6025E854)
 I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x6025E85E)
 I (../Core/Inc/fader_bank.h)(0x62720052)
-I (../Core/Inc/IS31FL3236A_led_driver.h)(0x62720A38)
+I (../Core/Inc/IS31FL3236A_led_driver.h)(0x62721742)
 I (../USB_DEVICE/App/usbd_midi_if.h)(0x627097E2)
 I (../Middlewares/ST/STM32_USB_Device_Library/Class/MIDI/Inc/usbd_midi.h)(0x623BB0C0)
 I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h)(0x62461D5D)
@@ -103,7 +103,7 @@ I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_uart.h)(0x62702D50)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_uart_ex.h)(0x62702D50)
 I (../Core/Inc/stm32f0xx_it.h)(0x62704EB0)
 I (../Middlewares/ST/STM32_TouchSensing_Library/inc/tsl_time.h)(0x62461D5D)
-I (../TOUCHSENSING/App/tsl_conf.h)(0x6272081A)
+I (../TOUCHSENSING/App/tsl_conf.h)(0x6272161B)
 I (../Middlewares/ST/STM32_TouchSensing_Library/inc/tsl_acq_tsc.h)(0x62461D5D)
 I (../Middlewares/ST/STM32_TouchSensing_Library/inc/tsl_types.h)(0x62461D5D)
 I (../Middlewares/ST/STM32_TouchSensing_Library/inc/tsl_check_config_tsc.h)(0x62461D5D)
@@ -145,7 +145,7 @@ I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_uart.h)(0x62702D50)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_uart_ex.h)(0x62702D50)
 F (../Core/Src/fader_bank.c)(0x627202F0)(--c99 -c --cpu Cortex-M0 -D__EVAL -g -O1 --apcs=interwork --split_sections -I ../TOUCHSENSING/App -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Core/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I ../Middlewares/ST/STM32_TouchSensing_Library/inc -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/MIDI/Inc -I ../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_FaderBankv1-IC:\Users\jacks\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\jacks\AppData\Local\Arm\Packs\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F072xB -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F072xB-o faderbankv1\fader_bank.o --omf_browse faderbankv1\fader_bank.crf --depend faderbankv1\fader_bank.d)
 I (../Core/Inc/fader_bank.h)(0x62720052)
-I (../Core/Inc/IS31FL3236A_led_driver.h)(0x62720A38)
+I (../Core/Inc/IS31FL3236A_led_driver.h)(0x62721742)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6025E85E)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h)(0x62702D50)
 I (../Core/Inc/stm32f0xx_hal_conf.h)(0x62704EB0)
@@ -180,7 +180,7 @@ I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_tsc.h)(0x62461D68)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_uart.h)(0x62702D50)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_uart_ex.h)(0x62702D50)
 F (..\Core\Src\IS31FL3236A_led_driver.c)(0x62720009)(--c99 -c --cpu Cortex-M0 -D__EVAL -g -O1 --apcs=interwork --split_sections -I ../TOUCHSENSING/App -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Core/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I ../Middlewares/ST/STM32_TouchSensing_Library/inc -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/MIDI/Inc -I ../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_FaderBankv1-IC:\Users\jacks\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\jacks\AppData\Local\Arm\Packs\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F072xB -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F072xB-o faderbankv1\is31fl3236a_led_driver.o --omf_browse faderbankv1\is31fl3236a_led_driver.crf --depend faderbankv1\is31fl3236a_led_driver.d)
-I (../Core/Inc/IS31FL3236A_led_driver.h)(0x62720A38)
+I (../Core/Inc/IS31FL3236A_led_driver.h)(0x62721742)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6025E85E)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h)(0x62702D50)
 I (../Core/Inc/stm32f0xx_hal_conf.h)(0x62704EB0)
@@ -216,7 +216,7 @@ I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_uart.h)(0x62702D50)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_uart_ex.h)(0x62702D50)
 F (../TOUCHSENSING/App/touchsensing.c)(0x62702D50)(--c99 -c --cpu Cortex-M0 -D__EVAL -g -O1 --apcs=interwork --split_sections -I ../TOUCHSENSING/App -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Core/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I ../Middlewares/ST/STM32_TouchSensing_Library/inc -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/MIDI/Inc -I ../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_FaderBankv1-IC:\Users\jacks\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\jacks\AppData\Local\Arm\Packs\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F072xB -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F072xB-o faderbankv1\touchsensing.o --omf_browse faderbankv1\touchsensing.crf --depend faderbankv1\touchsensing.d)
 I (../TOUCHSENSING/App/touchsensing.h)(0x62702D50)
-I (../TOUCHSENSING/App/tsl_conf.h)(0x6272081A)
+I (../TOUCHSENSING/App/tsl_conf.h)(0x6272161B)
 I (../Core/Inc/main.h)(0x62702D4F)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h)(0x62702D50)
 I (../Core/Inc/stm32f0xx_hal_conf.h)(0x62704EB0)
@@ -270,7 +270,7 @@ F (../TOUCHSENSING/App/tsl_user.c)(0x62702D50)(--c99 -c --cpu Cortex-M0 -D__EVAL
 I (../TOUCHSENSING/App/tsl_user.h)(0x627094A4)
 I (../Middlewares/ST/STM32_TouchSensing_Library/inc/tsl.h)(0x62461D5D)
 I (../Middlewares/ST/STM32_TouchSensing_Library/inc/tsl_acq.h)(0x62461D5D)
-I (../TOUCHSENSING/App/tsl_conf.h)(0x6272081A)
+I (../TOUCHSENSING/App/tsl_conf.h)(0x6272161B)
 I (../Core/Inc/main.h)(0x62702D4F)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h)(0x62702D50)
 I (../Core/Inc/stm32f0xx_hal_conf.h)(0x62704EB0)
@@ -1070,7 +1070,7 @@ I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_uart_ex.h)(0x62702D50)
 F (../Middlewares/ST/STM32_TouchSensing_Library/src/tsl.c)(0x62461D5D)(--c99 -c --cpu Cortex-M0 -D__EVAL -g -O1 --apcs=interwork --split_sections -I ../TOUCHSENSING/App -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Core/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I ../Middlewares/ST/STM32_TouchSensing_Library/inc -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/MIDI/Inc -I ../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_FaderBankv1-IC:\Users\jacks\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\jacks\AppData\Local\Arm\Packs\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F072xB -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F072xB-o faderbankv1\tsl.o --omf_browse faderbankv1\tsl.crf --depend faderbankv1\tsl.d)
 I (../Middlewares/ST/STM32_TouchSensing_Library/inc/tsl.h)(0x62461D5D)
 I (../Middlewares/ST/STM32_TouchSensing_Library/inc/tsl_acq.h)(0x62461D5D)
-I (../TOUCHSENSING/App/tsl_conf.h)(0x6272081A)
+I (../TOUCHSENSING/App/tsl_conf.h)(0x6272161B)
 I (../Core/Inc/main.h)(0x62702D4F)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h)(0x62702D50)
 I (../Core/Inc/stm32f0xx_hal_conf.h)(0x62704EB0)
@@ -1119,7 +1119,7 @@ I (../Middlewares/ST/STM32_TouchSensing_Library/inc/tsl_filter.h)(0x62461D5D)
 I (../Middlewares/ST/STM32_TouchSensing_Library/inc/tsl_globals.h)(0x62461D5D)
 F (../Middlewares/ST/STM32_TouchSensing_Library/src/tsl_acq_tsc.c)(0x62461D5D)(--c99 -c --cpu Cortex-M0 -D__EVAL -g -O1 --apcs=interwork --split_sections -I ../TOUCHSENSING/App -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Core/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I ../Middlewares/ST/STM32_TouchSensing_Library/inc -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/MIDI/Inc -I ../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_FaderBankv1-IC:\Users\jacks\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\jacks\AppData\Local\Arm\Packs\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F072xB -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F072xB-o faderbankv1\tsl_acq_tsc.o --omf_browse faderbankv1\tsl_acq_tsc.crf --depend faderbankv1\tsl_acq_tsc.d)
 I (../Middlewares/ST/STM32_TouchSensing_Library/inc/tsl_acq_tsc.h)(0x62461D5D)
-I (../TOUCHSENSING/App/tsl_conf.h)(0x6272081A)
+I (../TOUCHSENSING/App/tsl_conf.h)(0x6272161B)
 I (../Core/Inc/main.h)(0x62702D4F)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h)(0x62702D50)
 I (../Core/Inc/stm32f0xx_hal_conf.h)(0x62704EB0)
@@ -1166,7 +1166,7 @@ I (../Middlewares/ST/STM32_TouchSensing_Library/inc/tsl_linrot.h)(0x62461D5D)
 F (../Middlewares/ST/STM32_TouchSensing_Library/src/tsl_globals.c)(0x62461D5D)(--c99 -c --cpu Cortex-M0 -D__EVAL -g -O1 --apcs=interwork --split_sections -I ../TOUCHSENSING/App -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Core/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I ../Middlewares/ST/STM32_TouchSensing_Library/inc -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/MIDI/Inc -I ../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_FaderBankv1-IC:\Users\jacks\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\jacks\AppData\Local\Arm\Packs\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F072xB -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F072xB-o faderbankv1\tsl_globals.o --omf_browse faderbankv1\tsl_globals.crf --depend faderbankv1\tsl_globals.d)
 I (../Middlewares/ST/STM32_TouchSensing_Library/inc/tsl_globals.h)(0x62461D5D)
 I (../Middlewares/ST/STM32_TouchSensing_Library/inc/tsl_acq.h)(0x62461D5D)
-I (../TOUCHSENSING/App/tsl_conf.h)(0x6272081A)
+I (../TOUCHSENSING/App/tsl_conf.h)(0x6272161B)
 I (../Core/Inc/main.h)(0x62702D4F)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h)(0x62702D50)
 I (../Core/Inc/stm32f0xx_hal_conf.h)(0x62704EB0)
@@ -1212,7 +1212,7 @@ I (../Middlewares/ST/STM32_TouchSensing_Library/inc/tsl_linrot.h)(0x62461D5D)
 F (../Middlewares/ST/STM32_TouchSensing_Library/src/tsl_touchkey.c)(0x62461D5D)(--c99 -c --cpu Cortex-M0 -D__EVAL -g -O1 --apcs=interwork --split_sections -I ../TOUCHSENSING/App -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Core/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I ../Middlewares/ST/STM32_TouchSensing_Library/inc -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/MIDI/Inc -I ../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_FaderBankv1-IC:\Users\jacks\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\jacks\AppData\Local\Arm\Packs\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F072xB -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F072xB-o faderbankv1\tsl_touchkey.o --omf_browse faderbankv1\tsl_touchkey.crf --depend faderbankv1\tsl_touchkey.d)
 I (../Middlewares/ST/STM32_TouchSensing_Library/inc/tsl_touchkey.h)(0x62461D5D)
 I (../Middlewares/ST/STM32_TouchSensing_Library/inc/tsl_acq.h)(0x62461D5D)
-I (../TOUCHSENSING/App/tsl_conf.h)(0x6272081A)
+I (../TOUCHSENSING/App/tsl_conf.h)(0x6272161B)
 I (../Core/Inc/main.h)(0x62702D4F)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h)(0x62702D50)
 I (../Core/Inc/stm32f0xx_hal_conf.h)(0x62704EB0)
@@ -1257,7 +1257,7 @@ I (../Middlewares/ST/STM32_TouchSensing_Library/inc/tsl_object.h)(0x62461D5D)
 I (../Middlewares/ST/STM32_TouchSensing_Library/inc/tsl_linrot.h)(0x62461D5D)
 F (../Middlewares/ST/STM32_TouchSensing_Library/src/tsl_acq.c)(0x62461D5D)(--c99 -c --cpu Cortex-M0 -D__EVAL -g -O1 --apcs=interwork --split_sections -I ../TOUCHSENSING/App -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Core/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I ../Middlewares/ST/STM32_TouchSensing_Library/inc -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/MIDI/Inc -I ../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_FaderBankv1-IC:\Users\jacks\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\jacks\AppData\Local\Arm\Packs\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F072xB -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F072xB-o faderbankv1\tsl_acq.o --omf_browse faderbankv1\tsl_acq.crf --depend faderbankv1\tsl_acq.d)
 I (../Middlewares/ST/STM32_TouchSensing_Library/inc/tsl_acq.h)(0x62461D5D)
-I (../TOUCHSENSING/App/tsl_conf.h)(0x6272081A)
+I (../TOUCHSENSING/App/tsl_conf.h)(0x6272161B)
 I (../Core/Inc/main.h)(0x62702D4F)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h)(0x62702D50)
 I (../Core/Inc/stm32f0xx_hal_conf.h)(0x62704EB0)
@@ -1306,7 +1306,7 @@ I (../Middlewares/ST/STM32_TouchSensing_Library/inc/tsl_dxs.h)(0x62461D5D)
 I (../Middlewares/ST/STM32_TouchSensing_Library/inc/tsl_object.h)(0x62461D5D)
 I (../Middlewares/ST/STM32_TouchSensing_Library/inc/tsl_touchkey.h)(0x62461D5D)
 I (../Middlewares/ST/STM32_TouchSensing_Library/inc/tsl_acq.h)(0x62461D5D)
-I (../TOUCHSENSING/App/tsl_conf.h)(0x6272081A)
+I (../TOUCHSENSING/App/tsl_conf.h)(0x6272161B)
 I (../Core/Inc/main.h)(0x62702D4F)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h)(0x62702D50)
 I (../Core/Inc/stm32f0xx_hal_conf.h)(0x62704EB0)
@@ -1351,7 +1351,7 @@ I (../Middlewares/ST/STM32_TouchSensing_Library/inc/tsl_globals.h)(0x62461D5D)
 F (../Middlewares/ST/STM32_TouchSensing_Library/src/tsl_linrot.c)(0x62461D5D)(--c99 -c --cpu Cortex-M0 -D__EVAL -g -O1 --apcs=interwork --split_sections -I ../TOUCHSENSING/App -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Core/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I ../Middlewares/ST/STM32_TouchSensing_Library/inc -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/MIDI/Inc -I ../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_FaderBankv1-IC:\Users\jacks\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\jacks\AppData\Local\Arm\Packs\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F072xB -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F072xB-o faderbankv1\tsl_linrot.o --omf_browse faderbankv1\tsl_linrot.crf --depend faderbankv1\tsl_linrot.d)
 I (../Middlewares/ST/STM32_TouchSensing_Library/inc/tsl_linrot.h)(0x62461D5D)
 I (../Middlewares/ST/STM32_TouchSensing_Library/inc/tsl_acq.h)(0x62461D5D)
-I (../TOUCHSENSING/App/tsl_conf.h)(0x6272081A)
+I (../TOUCHSENSING/App/tsl_conf.h)(0x6272161B)
 I (../Core/Inc/main.h)(0x62702D4F)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h)(0x62702D50)
 I (../Core/Inc/stm32f0xx_hal_conf.h)(0x62704EB0)
@@ -1399,7 +1399,7 @@ I (../Middlewares/ST/STM32_TouchSensing_Library/inc/tsl_ecs.h)(0x62461D5D)
 I (../Middlewares/ST/STM32_TouchSensing_Library/inc/tsl_object.h)(0x62461D5D)
 I (../Middlewares/ST/STM32_TouchSensing_Library/inc/tsl_touchkey.h)(0x62461D5D)
 I (../Middlewares/ST/STM32_TouchSensing_Library/inc/tsl_acq.h)(0x62461D5D)
-I (../TOUCHSENSING/App/tsl_conf.h)(0x6272081A)
+I (../TOUCHSENSING/App/tsl_conf.h)(0x6272161B)
 I (../Core/Inc/main.h)(0x62702D4F)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h)(0x62702D50)
 I (../Core/Inc/stm32f0xx_hal_conf.h)(0x62704EB0)
@@ -1445,7 +1445,7 @@ F (../Middlewares/ST/STM32_TouchSensing_Library/src/tsl_object.c)(0x62461D5D)(--
 I (../Middlewares/ST/STM32_TouchSensing_Library/inc/tsl_object.h)(0x62461D5D)
 I (../Middlewares/ST/STM32_TouchSensing_Library/inc/tsl_touchkey.h)(0x62461D5D)
 I (../Middlewares/ST/STM32_TouchSensing_Library/inc/tsl_acq.h)(0x62461D5D)
-I (../TOUCHSENSING/App/tsl_conf.h)(0x6272081A)
+I (../TOUCHSENSING/App/tsl_conf.h)(0x6272161B)
 I (../Core/Inc/main.h)(0x62702D4F)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h)(0x62702D50)
 I (../Core/Inc/stm32f0xx_hal_conf.h)(0x62704EB0)
@@ -1489,7 +1489,7 @@ I (../Middlewares/ST/STM32_TouchSensing_Library/inc/tsl_linrot.h)(0x62461D5D)
 I (../Middlewares/ST/STM32_TouchSensing_Library/inc/tsl_globals.h)(0x62461D5D)
 F (../Middlewares/ST/STM32_TouchSensing_Library/src/tsl_time.c)(0x62461D5D)(--c99 -c --cpu Cortex-M0 -D__EVAL -g -O1 --apcs=interwork --split_sections -I ../TOUCHSENSING/App -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Core/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I ../Middlewares/ST/STM32_TouchSensing_Library/inc -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/MIDI/Inc -I ../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_FaderBankv1-IC:\Users\jacks\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\jacks\AppData\Local\Arm\Packs\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F072xB -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F072xB-o faderbankv1\tsl_time.o --omf_browse faderbankv1\tsl_time.crf --depend faderbankv1\tsl_time.d)
 I (../Middlewares/ST/STM32_TouchSensing_Library/inc/tsl_time.h)(0x62461D5D)
-I (../TOUCHSENSING/App/tsl_conf.h)(0x6272081A)
+I (../TOUCHSENSING/App/tsl_conf.h)(0x6272161B)
 I (../Core/Inc/main.h)(0x62702D4F)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h)(0x62702D50)
 I (../Core/Inc/stm32f0xx_hal_conf.h)(0x62704EB0)
@@ -1536,7 +1536,7 @@ I (../Middlewares/ST/STM32_TouchSensing_Library/inc/tsl_linrot.h)(0x62461D5D)
 F (../Middlewares/ST/STM32_TouchSensing_Library/src/tsl_filter.c)(0x62461D5D)(--c99 -c --cpu Cortex-M0 -D__EVAL -g -O1 --apcs=interwork --split_sections -I ../TOUCHSENSING/App -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Core/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I ../Middlewares/ST/STM32_TouchSensing_Library/inc -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/MIDI/Inc -I ../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_FaderBankv1-IC:\Users\jacks\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\jacks\AppData\Local\Arm\Packs\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F072xB -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F072xB-o faderbankv1\tsl_filter.o --omf_browse faderbankv1\tsl_filter.crf --depend faderbankv1\tsl_filter.d)
 I (../Middlewares/ST/STM32_TouchSensing_Library/inc/tsl_filter.h)(0x62461D5D)
 I (../Middlewares/ST/STM32_TouchSensing_Library/inc/tsl_acq.h)(0x62461D5D)
-I (../TOUCHSENSING/App/tsl_conf.h)(0x6272081A)
+I (../TOUCHSENSING/App/tsl_conf.h)(0x6272161B)
 I (../Core/Inc/main.h)(0x62702D4F)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h)(0x62702D50)
 I (../Core/Inc/stm32f0xx_hal_conf.h)(0x62704EB0)

@@ -147,22 +147,22 @@
 /** TouchKeys Proximity state input threshold (range=0..255)
   - Enter Proximity state if delta is above
 */
-#define TSLPRM_TKEY_PROX_IN_TH (10)
+#define TSLPRM_TKEY_PROX_IN_TH (2)
 
 /** TouchKeys Proximity state output threshold (range=0..255)
   - Exit Proximity state if delta is below
 */
-#define TSLPRM_TKEY_PROX_OUT_TH (5)
+#define TSLPRM_TKEY_PROX_OUT_TH (1)
 
 /** TouchKeys Detect state input threshold (range=0..255)
   - Enter Detect state if delta is above
 */
-#define TSLPRM_TKEY_DETECT_IN_TH (120)
+#define TSLPRM_TKEY_DETECT_IN_TH (40)
 
 /** TouchKeys Detect state output threshold (range=0..255)
   - Exit Detect state if delta is below
 */
-#define TSLPRM_TKEY_DETECT_OUT_TH (110)
+#define TSLPRM_TKEY_DETECT_OUT_TH (35)
 
 /** TouchKeys re-Calibration threshold (range=0..255)
   - @warning The value is inverted in the sensor state machine

@@ -57,6 +57,8 @@
 
 #define KEY_DETECT(chan) ((MyTKeys[chan].p_Data->StateId == TSL_STATEID_DETECT) || \
                        (MyTKeys[chan].p_Data->StateId == TSL_STATEID_DEB_RELEASE_DETECT))
+											 
+#define KEY_CHANGE(chan) ((MyTKeys[chan].p_Data->Change))
 
 /* USER CODE END PM */
 
@@ -213,17 +215,10 @@ int main(void)
 				}
 			}
 			
-			if (KEY_DETECT(0)) {
-				if (tkey_status) {
-					// do nothing	
-				} else {
-					tkey_status = 1;
-					HAL_GPIO_WritePin(GPIOC, TKEY_LED_Pin, GPIO_PIN_SET);
-				}
-			} else {
-				if (tkey_status) {
-					tkey_status = 0;
-					HAL_GPIO_WritePin(GPIOC, TKEY_LED_Pin, GPIO_PIN_RESET);
+			if (KEY_CHANGE(0)) {
+				if (KEY_DETECT(0)) {
+					tkey_status = !tkey_status;
+					HAL_GPIO_TogglePin(GPIOC, TKEY_LED_Pin);
 				}
 			}
 			
