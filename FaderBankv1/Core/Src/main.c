@@ -221,6 +221,21 @@ int main(void)
 					HAL_GPIO_TogglePin(GPIOC, TKEY_LED_Pin);
 				}
 			}
+
+			
+//			if (KEY_DETECT(0)) {
+//				if (tkey_status) {
+//					// do nothing	
+//				} else {
+//					tkey_status = 1;
+//					HAL_GPIO_WritePin(GPIOC, TKEY_LED_Pin, GPIO_PIN_SET);
+//				}
+//			} else {
+//				if (tkey_status) {
+//					tkey_status = 0;
+//					HAL_GPIO_WritePin(GPIOC, TKEY_LED_Pin, GPIO_PIN_RESET);
+//				}
+//			}
 			
 			
 		}			
