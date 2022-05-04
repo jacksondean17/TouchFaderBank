@@ -22,6 +22,7 @@ uint8_t i2cbuf[I2CBUF_SIZE];
 uint8_t UPDATE_REG_DATA[] = {0x25, 0x00};
 const uint8_t DRIVER_ADDRS[] = {DRIVER0_I2C_ADDR, DRIVER1_I2C_ADDR, DRIVER2_I2C_ADDR, DRIVER3_I2C_ADDR};
 
+uint8_t testVar = 0;
 	
 HAL_StatusTypeDef _LED_Driver_Write(I2C_HandleTypeDef *hi2c, uint8_t addr, uint8_t* buffer, uint8_t n_bytes) {
 	return HAL_I2C_Master_Transmit(hi2c, addr, buffer, n_bytes, 10000);
@@ -32,8 +33,16 @@ void LED_Driver_Write(uint8_t addr, uint8_t* buffer, uint8_t n_bytes) {
 	HAL_StatusTypeDef status = _LED_Driver_Write(_hi2c, addr, buffer, n_bytes);
 	if (status != HAL_OK) {
 		//wtf
-		int i = 1;
-		i++;
+		testVar++;
+		if (status == HAL_ERROR) {
+		testVar++;
+		} else if (status == HAL_BUSY) {
+		testVar++;
+
+		} else if (status == HAL_TIMEOUT) {
+		testVar++;
+
+		}
 	}
 		// Write PWM Update Register ...
 	_LED_Driver_Write(_hi2c, addr, UPDATE_REG_DATA, 2);
@@ -50,10 +59,15 @@ void InitLEDDriver(uint8_t id) {
 	i2cbuf[1] = 0x01; // Setting for normal operation
 	LED_Driver_Write(addr, i2cbuf, 2);
 	
+	for (int i = 0; i < 4; i++) {
+		SetLEDPWMs(i);
+	}
+	
 	i2cbuf[0] = 0x26;
 	for (int i = 1; i <= 36; i++) {
 		i2cbuf[i] = 0;
 	}
+	
 	SetLEDs(id, i2cbuf, 37);
 }
 

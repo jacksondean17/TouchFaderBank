@@ -202,12 +202,12 @@
 /** Linear/Rotary Detect state input threshold (range=0..255)
   - Enter Detect state if delta is above
 */
-#define TSLPRM_LINROT_DETECT_IN_TH (15)
+#define TSLPRM_LINROT_DETECT_IN_TH (10)
 
 /** Linear/Rotary Detect state output threshold (range=0..255)
   - Exit Detect state if delta is below
 */
-#define TSLPRM_LINROT_DETECT_OUT_TH (10)
+#define TSLPRM_LINROT_DETECT_OUT_TH (5)
 
 /** Linear/Rotary re-Calibration threshold (range=0..255)
   - @warning The value is inverted in the sensor state machine

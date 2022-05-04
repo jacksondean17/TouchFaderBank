@@ -54,8 +54,10 @@
 	int AdjustFaderTrack(uint8_t track_id, uint8_t pos) {
 		int change = pos - FaderBank[track_id].rel_starting_pos;
 		
-		uint8_t new_pos = FaderBank[track_id].abs_starting_pos + change;
-
+		int16_t new_pos = FaderBank[track_id].abs_starting_pos + change;
+		if (new_pos < 0) new_pos = 0;
+		if (new_pos > 127) new_pos = 127;
+	
 		SetFaderTrack(track_id, new_pos);
 		return change;
 	}

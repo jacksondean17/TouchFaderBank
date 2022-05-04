@@ -25,7 +25,7 @@ extern "C" {
 
 #include "IS31FL3236A_led_driver.h"
 
-// #define RELATIVE_FADER_MOVEMENT
+#define RELATIVE_FADER_MOVEMENT
 	
 #define FB_TOTAL_TRACKS (4)
 

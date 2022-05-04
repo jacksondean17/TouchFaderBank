@@ -34,7 +34,7 @@ extern "C" {
 #define I2CBUF_SIZE (256)
 
 // 0 to 255
-#define LED_PWM_BRIGHTNESS (127)
+#define LED_PWM_BRIGHTNESS (0x10)
 
 
 HAL_StatusTypeDef _LED_Driver_Write(I2C_HandleTypeDef *hi2c, uint8_t addr, uint8_t* buffer, uint8_t n_bytes);
