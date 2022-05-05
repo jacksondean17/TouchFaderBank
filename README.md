@@ -1,7 +1,28 @@
-# LED Fader Bank
+# Touch Fader Bank
 
-By Brady Hartog and Jackson Dean
+[(Drawing —> Photo) header image]
 
-Our project is a fader bank for use with a computer based digital audio workstation (DAW). It provides several sliders or faders which can be used to control various parameters in a DAW such as volume level, effect amplitude, speed, sound envelope, etc.
+Our Touch Fader Bank is an innovative fader bank based on capacitive touch sensing and LED level metering. Compared to conventional mechanical faders, these touch-based faders offer the following key advantages:
 
-It will use capacitive touch sensors for the user to adjust the fader value, and LED arrays to display the current value.
+- *Synchronizable* — Touch faders are soft controls that can automatically update their values to represent multiple parameter groups or to reflect changes from other input sources.
+- *Interactive* — Touch faders are a highly interactive interface technology that can accept a wide range of input gestures for versatile and intuitive control. LED level meters provider richer visual feedback compared to conventional mechanical faders.
+- *Robust* — Touch faders are less susceptible to damage and have greater longevity compared to conventional mechanical faders.
+
+The fader bank is for use as a peripheral controller to any digital audio workstation (DAW). The device communicates with a DAW over USB using a Type-C connector. Its four general-purpose touch faders plus a touch button can be mapped to any MIDI-mappable parameter in the DAW.
+
+Created by students at the University of Utah for *ECE 5780: Embedded System Design*.
+
+## Authors
+- Brady Hartog
+- Jackson Dean
+
+## Repository Usage
+The fader bank is implemented using the STM32F072 microcontroller. Project directories are configured and automatically generated using STM32CubeMX. Projects are developed using the Keil MDK toolchain. As part of this toolchain, project code is compiled and loaded to the microcontroller using the Keil μVision IDE.
+
+## Repository Organization
+`FaderBankv1` is the project directory of the fader bank firmware. The `Verification` directory contains other project directories used for developing essential features such as capacitive sensing and LED level metering.
+
+## Resources
+The fader bank firmware depends on the following resources:
+- [STM32 MIDI Brain](https://github.com/samjkent/stm32f4-midi-brain) by Sam Kent
+- Various STM32 HAL libraries
