@@ -35,12 +35,29 @@
 *.i*86
 *.x86_64
 *.hex
+*.axf
+*.b[0-3][0-9]
+*.crf
+*.h86
+*.sbr
+
+# Build files
+# define exception below if needed
+*.bat
+*._ia
+*.__i
+*._iiini
+
+# Generated output files
+/Listings/*
+/Objects/*
 
 # Debug files
 *.dSYM/
 *.su
-*.idb
+*.idb.d
 *.pdb
+*.ini
 
 # Kernel module compile results
 *.mod*
@@ -54,5 +71,43 @@ dkms.conf
 # System metadata
 .DS_Store
 
+# Listing files
+*.cod
+*.htm
+*.i
+*.lst
+*.map
+*.m51
+*.m66
+*.scr
+
 # uVision project metadata
+*.opt
+*.uvopt
+*.uvoptx
+*.uvgui
+*.uvgui.*
 *.uvguix.*
+
+# Other files
+*.build_log.htm
+*.cdb
+*.dep
+*.ic
+*.lin
+*.lnp
+*.orc
+*.pack
+*.pdsc
+*.plg
+*.sct
+*.sfd
+*.sfr
+
+# Miscellaneous
+*.tra
+*.bin
+*.fed
+*.l1p
+*.l2p
+*.iex
