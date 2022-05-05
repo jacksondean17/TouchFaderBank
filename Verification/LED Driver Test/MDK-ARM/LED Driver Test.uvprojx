@@ -520,4 +520,14 @@
     <files/>
   </RTE>
 
+  <LayerInfo>
+    <Layers>
+      <Layer>
+        <LayName>LED Driver Test</LayName>
+        <LayPrjMark>1</LayPrjMark>
+        <LayTitle>LED Driver Test</LayTitle>
+      </Layer>
+    </Layers>
+  </LayerInfo>
+
 </Project>
