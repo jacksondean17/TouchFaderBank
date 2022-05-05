@@ -1,6 +1,6 @@
 # Touch Fader Bank
 
-[(Drawing —> Photo) header image]
+![Header](https://user-images.githubusercontent.com/19520849/166882946-8b9f3ceb-d19b-4c20-9c4b-a202c960e142.png)
 
 Our Touch Fader Bank is an innovative fader bank based on capacitive touch sensing and LED level metering. Compared to conventional mechanical faders, these touch-based faders offer the following key advantages:
 
