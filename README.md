@@ -16,8 +16,13 @@ Created by students at the University of Utah for *ECE 5780: Embedded System Des
 - Brady Hartog
 - Jackson Dean
 
+## Device Usage
+1. Power the fader bank using a 5V DC power supply.
+2. Connect the fader bank to your computer using a USB-C cable.
+3. In your DAW software, map MIDI control channels to the faders on the device. This process is different for different DAWs. To your computer the fader bank will appear as a USB audio device called "Alef Audio Fader Bank."
+
 ## Repository Usage
-The fader bank is implemented using the STM32F072 microcontroller. Project directories are configured and automatically generated using STM32CubeMX. Projects are developed using the Keil MDK toolchain. As part of this toolchain, project code is compiled and loaded to the microcontroller using the Keil μVision IDE.
+The fader bank is implemented using the STM32F072 microcontroller. Project directories are configured and automatically generated using STM32CubeMX. Projects are developed using the Keil MDK toolchain. As part of this toolchain, project code is compiled and loaded to the microcontroller using the Keil μVision IDE. Code is flashed to the microcontroller using as ST-Link programmer / debugger.
 
 ## Repository Organization
 `FaderBankv1` is the project directory of the fader bank firmware. The `Verification` directory contains other project directories used for developing essential features such as capacitive sensing and LED level metering.
